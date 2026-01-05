@@ -40,7 +40,7 @@ input[type=number] {
 }
 		</style>
 		<script type="module">
-import{render as E,h as B}from"./preact.js";import{useState as f,useEffect as P,useReducer as L}from"./hooks.js";import{jsx as e,jsxs as t}from"./jsx-runtime.js";var C=new Map,l=a=>({size:r=24,color:o="currentColor",strokeWidth:i=2,className:m=""})=>{let[c,g]=f(C.get(a));return P(()=>{fetch(`https://esm.sh/gh/lucide-icons/lucide@0c4ac91/icons/${a}.svg`).then(n=>n.text()).then(n=>{let x=new DOMParser().parseFromString(n,"image/svg+xml");C.set(a,x.documentElement),g(x.documentElement)}).catch(n=>console.error(`Failed to load icon: ${a}`,n))},[a]),e("svg",{xmlns:"http://www.w3.org/2000/svg",width:r,height:r,viewBox:"0 0 24 24",fill:"none",stroke:o,"stroke-width":i,"stroke-linecap":"round","stroke-linejoin":"round",class:`lucide lucide-${a} ${m}`,children:Array.from(c?.children??[],n=>B(n.nodeName,Object.fromEntries(Object.values(n.attributes).map(u=>[u.name,u.value]))))})},R=l("house"),k=l("shopping-bag"),T=l("presentation"),j=l("phone"),$=l("circle-question-mark"),D=l("book-open"),F=l("menu"),S=l("shopping-cart"),I=l("plus"),A=l("minus"),G=l("trash-2"),U=l("check"),Q=l("arrow-right"),V=l("arrow-left"),O=l("credit-card"),H=l("code"),W=l("server"),X=l("award"),Y=l("map-pin"),J=l("send"),y=l("external-link"),q=l("x"),s=class{static from(r,o,i,m,c){let g=`
+import{render as E,h as B}from"./preact.js";import{useState as f,useEffect as P,useReducer as L}from"./hooks.js";import{jsx as e,jsxs as t}from"./jsx-runtime.js";var C=new Map,l=a=>({size:r=24,color:o="currentColor",strokeWidth:i=2,className:m=""})=>{let[c,g]=f(C.get(a));return P(()=>{fetch(`./icons/${a}.svg`).then(n=>n.text()).then(n=>{let x=new DOMParser().parseFromString(n,"image/svg+xml");C.set(a,x.documentElement),g(x.documentElement)}).catch(n=>console.error(`Failed to load icon: ${a}`,n))},[a]),e("svg",{xmlns:"http://www.w3.org/2000/svg",width:r,height:r,viewBox:"0 0 24 24",fill:"none",stroke:o,"stroke-width":i,"stroke-linecap":"round","stroke-linejoin":"round",class:`lucide lucide-${a} ${m}`,children:Array.from(c?.children??[],n=>B(n.nodeName,Object.fromEntries(Object.values(n.attributes).map(u=>[u.name,u.value]))))})},R=l("house"),k=l("shopping-bag"),T=l("presentation"),j=l("phone"),$=l("circle-question-mark"),D=l("book-open"),F=l("menu"),S=l("shopping-cart"),I=l("plus"),A=l("minus"),G=l("trash-2"),U=l("check"),Q=l("arrow-right"),V=l("arrow-left"),O=l("credit-card"),H=l("code"),W=l("server"),X=l("award"),Y=l("map-pin"),J=l("send"),y=l("external-link"),q=l("x"),s=class{static from(r,o,i,m,c){let g=`
 			<svg width="${r}" height="${o}" xmlns="http://www.w3.org/2000/svg">
 				<rect width="100%" height="100%" fill="${i}"/>
 				<text 
@@ -90,4 +90,5 @@ import{render as E,h as B}from"./preact.js";import{useState as f,useEffect as P,
 	<body>
 		<div id="root"></div>
 	</body>
+
 </html>
