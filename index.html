@@ -1467,9 +1467,9 @@ var C = new Map(),
 		}
 	},
 	d = new b();
-d.items = JSON.parse(localStorage.getItem("cart") ?? "[]");
+d.items = JSON.parse(localStorage.getItem("cart_v2") ?? "[]");
 M(d);
-v.get(d).add(() => localStorage.setItem("cart", JSON.stringify(d.items)));
+v.get(d).add(() => localStorage.setItem("cart_v2", JSON.stringify(d.items)));
 var N = new te();
 N.rules = {
 	home() {
@@ -1724,4 +1724,5 @@ E(e(le, {}), document.getElementById("root"));
 	</body>
 
 </html>
+
 
