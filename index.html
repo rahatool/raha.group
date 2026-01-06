@@ -40,51 +40,1683 @@ input[type=number] {
 }
 		</style>
 		<script type="module">
-import{render as E,h as B}from"./preact.js";import{useState as f,useEffect as P,useReducer as L}from"./hooks.js";import{jsx as e,jsxs as t}from"./jsx-runtime.js";var C=new Map,l=a=>({size:r=24,color:o="currentColor",strokeWidth:i=2,className:m=""})=>{let[c,g]=f(C.get(a));return P(()=>{fetch(`./icons/${a}.svg`).then(n=>n.text()).then(n=>{let x=new DOMParser().parseFromString(n,"image/svg+xml");C.set(a,x.documentElement),g(x.documentElement)}).catch(n=>console.error(`Failed to load icon: ${a}`,n))},[a]),e("svg",{xmlns:"http://www.w3.org/2000/svg",width:r,height:r,viewBox:"0 0 24 24",fill:"none",stroke:o,"stroke-width":i,"stroke-linecap":"round","stroke-linejoin":"round",class:`lucide lucide-${a} ${m}`,children:Array.from(c?.children??[],n=>B(n.nodeName,Object.fromEntries(Object.values(n.attributes).map(u=>[u.name,u.value]))))})},R=l("house"),k=l("shopping-bag"),T=l("presentation"),j=l("phone"),$=l("circle-question-mark"),D=l("book-open"),F=l("menu"),S=l("shopping-cart"),I=l("plus"),A=l("minus"),G=l("trash-2"),U=l("check"),Q=l("arrow-right"),V=l("arrow-left"),O=l("credit-card"),H=l("code"),W=l("server"),X=l("award"),Y=l("map-pin"),J=l("send"),y=l("external-link"),q=l("x"),s=class{static from(r,o,i,m,c){let g=`
-			<svg width="${r}" height="${o}" xmlns="http://www.w3.org/2000/svg">
-				<rect width="100%" height="100%" fill="${i}"/>
-				<text 
-					x="50%" 
-					y="50%" 
-					font-family="sans-serif" 
-					font-size="30" 
-					font-weight="bold" 
-					fill="${m}" 
-					text-anchor="middle" 
-					dy=".3em"
-				>${c}</text>
-			</svg>
-		`.trim();return`data:image/svg+xml;charset=UTF-8,${encodeURIComponent(g)}`}},z=[{id:"home",label:"\u062E\u0627\u0646\u0647",icon:R},{id:"shop",label:"\u0641\u0631\u0648\u0634\u200C\u06AF\u0627\u0647",icon:k},{id:"blog",label:"\u06AF\u0627\u0647\u200C\u0646\u0648\u0634\u062A",icon:D},{id:"tour",label:"\u0631\u0647\u0627-\u06AF\u0631\u062F\u06CC",icon:T},{id:"faq",label:"\u067E\u0631\u0633\u0634\u200C\u06AF\u0627\u0646",icon:$},{id:"contact",label:"\u062A\u0645\u0627\u0633 \u0628\u0627 \u0645\u0627",icon:j}],K=["\u0647\u0645\u0647","\u067E\u0648\u0633\u062A\u0647 \u0622\u0645\u0627\u062F\u0647","\u062F\u0627\u062F\u0647\u200C\u0628\u0627\u0646","\u0646\u0634\u0627\u0646\u06CC \u0627\u06CC\u0646\u062A\u0631\u0646\u062A\u06CC","\u067E\u0634\u062A\u06CC\u0628\u0627\u0646\u06CC \u0648\u0628\u200C\u06AF\u0627\u0647","\u0645\u062F\u06CC\u0631\u06CC\u062A \u0634\u0628\u06A9\u0647\u200C\u0647\u0627\u06CC \u0627\u062C\u062A\u0645\u0627\u0639\u06CC","\u0627\u0628\u0632\u0627\u0631","\u062F\u06CC\u06AF\u0631"],w=[{id:101,name:"\u062B\u0628\u062A \u062F\u0627\u0645\u0646\u0647 .ir",category:"\u0646\u0634\u0627\u0646\u06CC \u0627\u06CC\u0646\u062A\u0631\u0646\u062A\u06CC",price:5e4,unit:"\u0633\u0627\u0644",image:s.from(400,300,"#f59e0b","white","IR Domain")},{id:102,name:"\u062B\u0628\u062A \u062F\u0627\u0645\u0646\u0647 .com",category:"\u0646\u0634\u0627\u0646\u06CC \u0627\u06CC\u0646\u062A\u0631\u0646\u062A\u06CC",price:15e5,unit:"\u0633\u0627\u0644",image:s.from(400,300,"#f59e0b","white","COM Domain")},{id:201,name:"Edge Worker",category:"\u062F\u0627\u062F\u0647\u200C\u0628\u0627\u0646",price:5e3,unit:"\u0633\u0627\u0639\u062A",note:"\u0628\u0631 \u067E\u0627\u06CC\u0647 \u0632\u0645\u0627\u0646 \u0627\u062C\u0631\u0627\u06CC Wall-clock (CPU time). \u0645\u062D\u0627\u0633\u0628\u0647 \u067E\u0644\u06A9\u0627\u0646\u06CC: \u0632\u06CC\u0631 \u06F2\u06F4 \u0633\u0627\u0639\u062A \u0646\u0631\u062E \u067E\u0627\u06CC\u0647\u060C \u062A\u0627 \u06F7\u06F2\u06F0 \u0633\u0627\u0639\u062A (\u06CC\u06A9 \u0645\u0627\u0647) \u0646\u0631\u062E \u0645\u06CC\u0627\u0646\u06CC\u060C \u0648 \u0628\u0627\u0644\u0627\u062A\u0631 \u0646\u0631\u062E \u0627\u0631\u0632\u0627\u0646\u200C\u062A\u0631.",tiers:[{limit:24,price:5e3},{limit:720,price:4e3},{limit:1/0,price:3e3}],image:s.from(400,300,"#10b981","white","Edge Worker")},{id:202,name:"Data Store Bundle",category:"\u062F\u0627\u062F\u0647\u200C\u0628\u0627\u0646",price:15e4,unit:"\u0628\u0633\u062A\u0647 \u0645\u0627\u0647\u0627\u0646\u0647",note:"\u0647\u0631 \u0628\u0633\u062A\u0647 \u062F\u0627\u0631\u0627\u06CC \u06F1 GiB \u0641\u0636\u0627 \u0648 \u06F3 Replica \u0648 \u06F1\u06F0 \u0645\u06CC\u0644\u06CC\u0648\u0646 Read Unit \u0648 \u06F1 \u0645\u06CC\u0644\u06CC\u0648\u0646 Write Unit \u0627\u0633\u062A.",image:s.from(400,300,"#10b981","white","Data Store")},{id:203,name:"Blob Store",category:"\u062F\u0627\u062F\u0647\u200C\u0628\u0627\u0646",price:5e4,unit:"GiB \u0645\u0627\u0647\u0627\u0646\u0647",note:"\u0645\u06CC\u0632\u0628\u0627\u0646\u06CC \u062F\u0627\u062F\u0647",image:s.from(400,300,"#10b981","white","Blob Store")},{id:204,name:"Data Network Traffic",category:"\u062F\u0627\u062F\u0647\u200C\u0628\u0627\u0646",price:1e3,unit:"GiB",note:"\u062A\u0631\u0627\u0641\u06CC\u06A9 \u0634\u0628\u06A9\u0647 \u0627\u0646\u062A\u0642\u0627\u0644 \u062F\u0627\u062F\u0647",image:s.from(400,300,"#10b981","white","Traffic")},{id:301,name:"\u067E\u0648\u0633\u062A\u0647 \u0634\u0631\u06A9\u062A\u06CC",category:"\u067E\u0648\u0633\u062A\u0647 \u0622\u0645\u0627\u062F\u0647",price:1e7,unit:"\u067E\u0648\u0633\u062A\u0647",image:s.from(400,300,"#2563eb","white","Corporate")},{id:302,name:"\u067E\u0648\u0633\u062A\u0647 \u0641\u0631\u0648\u0634\u06AF\u0627\u0647\u06CC",category:"\u067E\u0648\u0633\u062A\u0647 \u0622\u0645\u0627\u062F\u0647",price:12e6,unit:"\u067E\u0648\u0633\u062A\u0647",image:s.from(400,300,"#2563eb","white","E-Commerce")},{id:303,name:"\u067E\u0648\u0633\u062A\u0647 \u0622\u0645\u0648\u0632\u0634\u06CC",category:"\u067E\u0648\u0633\u062A\u0647 \u0622\u0645\u0627\u062F\u0647",price:8e6,unit:"\u067E\u0648\u0633\u062A\u0647",image:s.from(400,300,"#2563eb","white","Education")},{id:304,name:"\u067E\u0648\u0633\u062A\u0647 \u067E\u0632\u0634\u06A9\u06CC",category:"\u067E\u0648\u0633\u062A\u0647 \u0622\u0645\u0627\u062F\u0647",price:7e6,unit:"\u067E\u0648\u0633\u062A\u0647",image:s.from(400,300,"#2563eb","white","Medical")},{id:305,name:"\u067E\u0648\u0633\u062A\u0647 \u0645\u0634\u0627\u0648\u0631\u0627\u0646 \u0627\u0645\u0644\u0627\u06A9",category:"\u067E\u0648\u0633\u062A\u0647 \u0622\u0645\u0627\u062F\u0647",price:9e6,unit:"\u067E\u0648\u0633\u062A\u0647",image:s.from(400,300,"#2563eb","white","Real Estate")},{id:306,name:"\u067E\u0648\u0633\u062A\u0647 \u0648\u0628\u200C\u06AF\u0627\u0647 \u0634\u062E\u0635\u06CC",category:"\u067E\u0648\u0633\u062A\u0647 \u0622\u0645\u0627\u062F\u0647",price:5e6,unit:"\u067E\u0648\u0633\u062A\u0647",image:s.from(400,300,"#2563eb","white","Personal")},{id:401,name:"\u067E\u0634\u062A\u06CC\u0628\u0627\u0646\u06CC \u067E\u0627\u06CC\u0647",category:"\u067E\u0634\u062A\u06CC\u0628\u0627\u0646\u06CC \u0648\u0628\u200C\u06AF\u0627\u0647",price:1e6,unit:"\u0645\u0627\u0647",image:s.from(400,300,"#6366f1","white","Basic Support")},{id:402,name:"\u067E\u0634\u062A\u06CC\u0628\u0627\u0646\u06CC \u067E\u06CC\u0634\u0631\u0641\u062A\u0647",category:"\u067E\u0634\u062A\u06CC\u0628\u0627\u0646\u06CC \u0648\u0628\u200C\u06AF\u0627\u0647",price:3e6,unit:"\u0645\u0627\u0647",image:s.from(400,300,"#6366f1","white","Pro Support")},{id:403,name:"\u067E\u0634\u062A\u06CC\u0628\u0627\u0646\u06CC \u0648\u06CC\u0698\u0647",category:"\u067E\u0634\u062A\u06CC\u0628\u0627\u0646\u06CC \u0648\u0628\u200C\u06AF\u0627\u0647",price:8e6,unit:"\u0645\u0627\u0647",image:s.from(400,300,"#6366f1","white","VIP Support")},{id:404,name:"\u0628\u0627\u0631\u06AF\u0630\u0627\u0631\u06CC \u0648 \u0686\u06CC\u0646\u0634 \u0645\u062D\u062A\u0648\u0627",category:"\u067E\u0634\u062A\u06CC\u0628\u0627\u0646\u06CC \u0648\u0628\u200C\u06AF\u0627\u0647",price:75e4,unit:"\u0628\u0631\u06AF\u0647",image:s.from(400,300,"#9ca3af","white","Content")},{id:501,name:"\u0645\u062F\u06CC\u0631\u06CC\u062A \u0627\u06CC\u0646\u0633\u062A\u0627\u06AF\u0631\u0627\u0645",category:"\u0645\u062F\u06CC\u0631\u06CC\u062A \u0634\u0628\u06A9\u0647\u200C\u0647\u0627\u06CC \u0627\u062C\u062A\u0645\u0627\u0639\u06CC",price:4e6,unit:"\u0645\u0627\u0647",image:s.from(400,300,"#ec4899","white","Instagram")},{id:502,name:"\u0645\u062F\u06CC\u0631\u06CC\u062A \u062A\u0644\u06AF\u0631\u0627\u0645",category:"\u0645\u062F\u06CC\u0631\u06CC\u062A \u0634\u0628\u06A9\u0647\u200C\u0647\u0627\u06CC \u0627\u062C\u062A\u0645\u0627\u0639\u06CC",price:3e6,unit:"\u0645\u0627\u0647",image:s.from(400,300,"#22d3ee","white","Telegram")},{id:503,name:"\u0645\u062F\u06CC\u0631\u06CC\u062A \u0644\u06CC\u0646\u06A9\u062F\u06CC\u0646",category:"\u0645\u062F\u06CC\u0631\u06CC\u062A \u0634\u0628\u06A9\u0647\u200C\u0647\u0627\u06CC \u0627\u062C\u062A\u0645\u0627\u0639\u06CC",price:5e6,unit:"\u0645\u0627\u0647",image:s.from(400,300,"#0ea5e9","white","LinkedIn")},{id:504,name:"\u0645\u062F\u06CC\u0631\u06CC\u062A \u062A\u0648\u06CC\u06CC\u062A\u0631 (X)",category:"\u0645\u062F\u06CC\u0631\u06CC\u062A \u0634\u0628\u06A9\u0647\u200C\u0647\u0627\u06CC \u0627\u062C\u062A\u0645\u0627\u0639\u06CC",price:35e5,unit:"\u0645\u0627\u0647",image:s.from(400,300,"#000000","white","Twitter X")},{id:505,name:"\u0645\u062F\u06CC\u0631\u06CC\u062A \u06CC\u0648\u062A\u06CC\u0648\u0628",category:"\u0645\u062F\u06CC\u0631\u06CC\u062A \u0634\u0628\u06A9\u0647\u200C\u0647\u0627\u06CC \u0627\u062C\u062A\u0645\u0627\u0639\u06CC",price:55e5,unit:"\u0645\u0627\u0647",image:s.from(400,300,"#ff0000","white","YouTube")},{id:601,name:"\u067E\u06CC\u0634\u200C\u06A9\u0627\u0631 DNS",category:"\u062F\u06CC\u06AF\u0631",price:3e4,unit:"\u0645\u0627\u0647",note:"\u0631\u0627\u0647\u200C\u0627\u0646\u062F\u0627\u0632\u06CC \u067E\u06CC\u0634\u200C\u06A9\u0627\u0631 \u0628\u0627 \u067E\u0634\u062A\u06CC\u0628\u0627\u0646\u06CC \u0627\u0632 \u0647\u0645\u0647 Resource Record Type",image:s.from(400,300,"#9ca3af","white","Domain Name Service")},{id:602,name:"\u06AF\u0648\u0627\u0647\u06CC\u200C\u0646\u0627\u0645\u0647 TLS",category:"\u062F\u06CC\u06AF\u0631",price:6e5,unit:"\u0633\u0627\u0644",image:s.from(400,300,"#9ca3af","white","Transport Layer Security")},{id:603,name:"\u067E\u06CC\u0634\u200C\u06A9\u0627\u0631 CDN",category:"\u062F\u06CC\u06AF\u0631",price:3e5,unit:"\u0645\u0627\u0647",note:"\u0628\u0627 \u0627\u06CC\u0646 \u067E\u06CC\u0634\u200C\u06A9\u0627\u0631 \u0645\u062D\u062A\u0648\u0627 \u0632\u0648\u062F\u062A\u0631 \u0628\u0647 \u06A9\u0627\u0631\u0628\u0631 \u0645\u06CC\u200C\u0631\u0633\u062F \u0648 UX \u0631\u0627 \u0628\u0647\u0628\u0648\u062F \u0645\u06CC\u200C\u062F\u0647\u062F.",image:s.from(400,300,"#9ca3af","white","Content Delivery Network")},{id:604,name:"\u067E\u06CC\u0634\u200C\u06A9\u0627\u0631 DDoS Protection",category:"\u062F\u06CC\u06AF\u0631",price:2e5,unit:"\u0645\u0627\u0647",note:"\u0645\u062D\u0627\u0641\u0638\u062A \u0644\u0627\u06CC\u0647 \u06F3 \u0648 \u06F4 \u0648 \u06F7",image:s.from(400,300,"#9ca3af","white","DDoS Guard")},{id:605,name:"\u062F\u0631\u06CC\u0627\u0641\u062A \u0646\u0627\u0645\u0647 \u0627\u0644\u06A9\u062A\u0631\u0648\u0646\u06CC\u06A9\u06CC",category:"\u062F\u06CC\u06AF\u0631",price:4e5,unit:"\u0631\u0627\u06CC\u0627\u0646\u0634\u0627\u0646\u06CC",note:"\u0631\u0627\u0647\u200C\u0627\u0646\u062F\u0627\u0632\u06CC \u067E\u06CC\u0634\u200C\u06A9\u0627\u0631",image:s.from(400,300,"#9ca3af","white","E-Mail Address")},{id:606,name:"\u0641\u0631\u0633\u062A\u0627\u062F\u0646 \u0646\u0627\u0645\u0647 \u0627\u0644\u06A9\u062A\u0631\u0648\u0646\u06CC\u06A9",category:"\u062F\u06CC\u06AF\u0631",price:50,unit:"\u0627\u06CC\u0645\u06CC\u0644",note:"\u06F1\u06F0 \u0627\u06CC\u0645\u06CC\u0644 \u0646\u062E\u0633\u062A \u0631\u0627\u06CC\u06AF\u0627\u0646\u060C \u0633\u067E\u0633 \u0647\u0631 \u0627\u06CC\u0645\u06CC\u0644 \u06F5\u06F0 \u062A\u0648\u0645\u0627\u0646.",tiers:[{limit:10,price:0},{limit:1/0,price:50}],image:s.from(400,300,"#9ca3af","white","SMTP Emails")},{id:607,name:"\u062F\u0631\u06CC\u0627\u0641\u062A \u0627\u06CC\u0646\u0645\u0627\u062F",category:"\u062F\u06CC\u06AF\u0631",price:95e4,unit:"\u062E\u062F\u0645\u062A",image:s.from(400,300,"#9ca3af","white","Enamad")},{id:608,name:"\u062B\u0628\u062A \u062F\u0631 \u0646\u0642\u0634\u0647 \u06AF\u0648\u06AF\u0644",category:"\u062F\u06CC\u06AF\u0631",price:95e4,unit:"\u0645\u06A9\u0627\u0646",image:s.from(400,300,"#9ca3af","white","Google Maps")},{id:609,name:"\u0628\u0647\u06CC\u0646\u0647\u200C\u0633\u0627\u0632\u06CC \u0648\u0628\u200C\u06AF\u0627\u0647",category:"\u062F\u06CC\u06AF\u0631",price:6e6,unit:"\u067E\u0631\u0648\u0698\u0647",image:s.from(400,300,"#9ca3af","white","SEO")},{id:610,name:"\u0631\u0627\u0647\u200C\u0627\u0646\u062F\u0627\u0632\u06CC GSC",category:"\u062F\u06CC\u06AF\u0631",price:12e5,unit:"\u062E\u062F\u0645\u062A",image:s.from(400,300,"#9ca3af","white","Google Search Console")},{id:611,name:"\u067E\u06CC\u0634\u200C\u06A9\u0627\u0631 \u067E\u06CC\u0627\u0645\u06A9 (SMS)",category:"\u062F\u06CC\u06AF\u0631",price:100,unit:"\u067E\u06CC\u0627\u0645\u06A9",note:"\u062A\u0639\u0631\u0641\u0647 \u067E\u0644\u06A9\u0627\u0646\u06CC: \u062A\u0627 \u06F1\u06F0\u06F0\u06F0 \u0639\u062F\u062F \u06F1\u06F0\u06F0 \u062A\u0648\u0645\u0627\u0646\u060C \u062A\u0627 \u06F5\u06F0\u06F0\u06F0 \u0639\u062F\u062F \u06F9\u06F0 \u062A\u0648\u0645\u0627\u0646\u060C \u0648 \u0628\u0627\u0644\u0627\u062A\u0631 \u06F8\u06F0 \u062A\u0648\u0645\u0627\u0646.",tiers:[{limit:1e3,price:100},{limit:5e3,price:90},{limit:1/0,price:80}],image:s.from(400,300,"#9ca3af","white","SMS")},{id:612,name:"\u067E\u06CC\u0634\u200C\u06A9\u0627\u0631 \u062D\u0645\u0644 \u0648 \u0646\u0642\u0644",category:"\u062F\u06CC\u06AF\u0631",price:15e4,unit:"\u0633\u0631\u0648\u06CC\u0633",note:"\u0647\u0632\u06CC\u0646\u0647 \u062B\u0627\u0628\u062A \u0647\u0631 \u0628\u0627\u0631 \u062D\u0645\u0644 \u062F\u0631\u0648\u0646 \u0634\u0647\u0631\u06CC",image:s.from(400,300,"#9ca3af","white","Delivery")},{id:613,name:"\u0645\u0634\u0627\u0648\u0631\u0647",category:"\u062F\u06CC\u06AF\u0631",price:25e5,unit:"\u0633\u0627\u0639\u062A",note:"\u0645\u0634\u0627\u0648\u0631\u0647 \u062F\u0631 \u0632\u0645\u06CC\u0646\u0647 \u0633\u0627\u062E\u062A (\u0637\u0631\u0627\u062D\u06CC \u0648 \u067E\u06CC\u0627\u062F\u0647\u200C\u0633\u0627\u0632\u06CC) \u0648 \u0631\u0627\u0647\u200C\u0627\u0646\u062F\u0627\u0632\u06CC \u0646\u0631\u0645\u200C\u0627\u0641\u0632\u0627\u0631\u0647\u0627",image:s.from(400,300,"#9ca3af","white","Consulting")},{id:701,name:"\u0646\u0631\u0645\u200C\u0627\u0641\u0632\u0627\u0631 \u062D\u0633\u0627\u0628\u062F\u0627\u0631\u06CC \u0627\u0628\u0631\u06CC",category:"\u0627\u0628\u0632\u0627\u0631",price:5e6,unit:"\u0627\u0634\u062A\u0631\u0627\u06A9 \u0633\u0627\u0644\u0627\u0646\u0647",image:s.from(400,300,"#8b5cf6","white","Accounting")},{id:702,name:"\u0627\u0641\u0632\u0648\u0646\u0647 \u062F\u0631\u06AF\u0627\u0647 \u067E\u0631\u062F\u0627\u062E\u062A",category:"\u0627\u0628\u0632\u0627\u0631",price:85e4,unit:"\u0627\u0641\u0632\u0648\u0646\u0647",image:s.from(400,300,"#ef4444","white","Payment Plugin")},{id:702,name:"\u0633\u0627\u062E\u062A \u0627\u0628\u0632\u0627\u0631 \u0646\u0631\u0645\u200C\u0627\u0641\u0632\u0627\u0631\u06CC",category:"\u0627\u0628\u0632\u0627\u0631",price:145e4,unit:"\u0633\u0627\u0639\u062A",image:s.from(400,300,"#2563eb","white","Custom Project")}],Z=[{id:1,name:"\u0647\u0632\u06CC\u0646\u0647 \u0628\u0631\u0646\u0627\u0645\u0647\u200C\u0646\u0648\u06CC\u0633\u06CC \u0627\u062E\u062A\u0635\u0627\u0635\u06CC",body:`<p>\u0628\u0631\u0627\u06CC \u0645\u062D\u0627\u0633\u0628\u0647 \u0647\u0632\u06CC\u0646\u0647 \u0628\u0631\u0646\u0627\u0645\u0647\u200C\u0646\u0648\u06CC\u0633\u06CC \u0627\u062E\u062A\u0635\u0627\u0635\u06CC \u0627\u0632 <a href="https://tariffs.irannsr.org/index.php/component/nikdesk/?view=tarefeh&dotask=m1_form" target="_blank">\u0645\u0627\u0634\u06CC\u0646 \u062D\u0633\u0627\u0628 \u062A\u0639\u0631\u0641\u0647 \u062E\u062F\u0645\u0627\u062A \u0641\u0646\u06CC-\u062A\u062E\u0635\u0635\u06CC \u0627\u0646\u0641\u0648\u0631\u0645\u0627\u062A\u06CC\u06A9</a> \u06A9\u0645\u06A9 \u0628\u06AF\u06CC\u0631\u06CC\u062F.</p><br/>
-		<p>\u0645\u06CC\u200C\u062A\u0648\u0627\u0646 \u0628\u0631\u0646\u0627\u0645\u0647\u200C\u0646\u0648\u06CC\u0633\u06CC \u0627\u062E\u062A\u0635\u0627\u0635\u06CC \u0631\u0627 \u0628\u0631\u067E\u0627\u06CC\u0647:</p><br/>
-		<strong>\u{1F530} \u0647\u0633\u062A\u0647 \u0648\u0631\u062F\u067E\u0631\u0633 \u0627\u0646\u062C\u0627\u0645 \u062F\u0627\u062F:</strong><br/>
-		\u{1F534} \u0633\u0631\u0639\u062A \u0627\u062C\u0631\u0627\u06CC PHP \u0646\u0633\u0628\u062A \u0628\u0647 \u0641\u0646\u0627\u0648\u0631\u06CC\u200C\u0647\u0627\u06CC \u062F\u06CC\u06AF\u0631 \u06A9\u0646\u062F\u062A\u0631 \u0627\u0633\u062A.<br/>
-		\u{1F534} front-end \u0648 back-end \u062F\u0631 \u0622\u0646 \u06CC\u06A9\u06CC \u0627\u0633\u062A \u0648 UI \u0648\u06CC\u0698\u06AF\u06CC \u062A\u0639\u0627\u0645\u0644\u06CC \u067E\u0627\u06CC\u06CC\u0646\u200C\u062A\u0631\u06CC \u062F\u0627\u0631\u062F.<br/>
-		\u{1F534} \u0647\u0631 \u0686\u0647 \u062F\u0627\u062F\u0647\u200C\u0647\u0627 \u0628\u06CC\u0634\u200C\u062A\u0631 \u0634\u0648\u062F\u060C \u06A9\u0646\u062F\u06CC \u062C\u0633\u062A\u200C\u0648\u062C\u0648 \u0628\u06CC\u0634\u200C\u062A\u0631 \u0645\u06CC\u200C\u0634\u0648\u062F.<br/>
-		\u{1F534} \u0646\u0631\u0645\u06CC \u0648 \u0627\u0646\u0639\u0637\u0627\u0641\u200C\u067E\u0630\u06CC\u0631\u06CC \u06A9\u0645 \u0628\u0631\u0627\u06CC \u0633\u0627\u0645\u0627\u0646\u0647\u200C\u0647\u0627\u06CC \u067E\u06CC\u0686\u06CC\u062F\u0647 \u062F\u0627\u0631\u062F.<br/>
-		\u{1F534} \u0627\u06AF\u0631 \u06A9\u0627\u0631\u0628\u0631 \u0628\u062E\u0648\u0627\u0647\u062F \u0686\u06CC\u0632\u06CC \u0631\u0627 \u0628\u0627\u0631\u06AF\u0630\u0627\u0631\u06CC \u06A9\u0646\u062F \u0628\u0647 \u067E\u0631\u0648\u0646\u062F\u0647\u200C\u0647\u0627\u06CC \u06A9\u0627\u0631\u0628\u0631\u0647\u0627\u06CC \u062F\u06CC\u06AF\u0631 \u062F\u0633\u062A\u0631\u0633\u06CC \u062F\u0627\u0631\u062F \u0648 \u0628\u0627\u06CC\u062F \u06CC\u06A9 \u0627\u0641\u0632\u0648\u0646\u0647 \u062C\u062F\u0627 \u0646\u0648\u0634\u062A.<br/>
-		\u{1F534} \u06AF\u0627\u0647\u200C\u0634\u0645\u0627\u0631 \u062E\u0648\u0631\u0634\u06CC\u062F\u06CC \u062F\u0627\u0633\u062A\u0627\u0646 \u062F\u0627\u0631\u062F.<br/>
-		\u{1F534} <a href="https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=wordpress" target="_blank">\u0622\u0633\u06CC\u0628\u200C\u067E\u0630\u06CC\u0631\u06CC\u200C\u0647\u0627</a><br/>
-		\u{1F7E2} \u0648\u0644\u06CC \u0622\u062F\u0645\u200C\u0647\u0627\u06CC \u0628\u06CC\u0634\u200C\u062A\u0631\u06CC \u0628\u0631\u0627\u06CC \u062A\u0648\u0633\u0639\u0647 \u062F\u0627\u062F\u0646 \u0622\u0646 \u067E\u06CC\u062F\u0627 \u0645\u06CC\u200C\u0634\u0648\u062F.<br/><br/>
-		<strong>\u{1F530} \u0628\u0627 \u0641\u0646\u0627\u0648\u0631\u06CC\u200C\u0647\u0627\u06CC \u062F\u06CC\u06AF\u0631:</strong><br/>
-		\u{1F534} \u062F\u0631 \u0622\u063A\u0627\u0632 \u0686\u0646\u062F \u0628\u0631\u0627\u0628\u0631 \u0632\u0645\u0627\u0646 \u0648 \u0647\u0632\u06CC\u0646\u0647 \u0645\u06CC\u200C\u0628\u0631\u062F<br/>
-		\u{1F7E2} \u0648\u0644\u06CC \u0628\u0627 \u06AF\u0630\u0631 \u0632\u0645\u0627\u0646 \u0647\u0632\u06CC\u0646\u0647 \u0646\u06AF\u0647\u062F\u0627\u0631\u06CC \u06A9\u0645\u200C\u062A\u0631\u06CC \u062F\u0627\u0631\u062F\u060C \u0645\u0627\u0646\u0646\u062F \u06CC\u062E\u0686\u0627\u0644 \u0628\u0627 \u0645\u0635\u0631\u0641 \u0627\u0646\u0631\u0698\u06CC A+++.<br/>
-		\u{1F7E2} \u06A9\u0627\u0631\u0627\u06CC\u06CC \u0628\u0647\u062A\u0631: \u0633\u0631\u0639\u062A \u0627\u062C\u0631\u0627 \u0628\u0647\u062A\u0631 \u0648 \u0628\u0647\u06CC\u0646\u0647 \u0628\u0648\u062F\u0646 \u0646\u0631\u0645\u200C\u0627\u0641\u0632\u0627\u0631<br/>
-		\u{1F7E2} \u0627\u0645\u0646\u06CC\u062A \u0628\u06CC\u0634\u200C\u062A\u0631: \u06A9\u0646\u062A\u0631\u0644 \u06A9\u0627\u0645\u0644 \u0628\u0631 \u06A9\u062F\u0647\u0627 \u0648 \u06A9\u0627\u0647\u0634 \u062E\u0637\u0631\u0627\u062A \u0627\u0645\u0646\u06CC\u062A\u06CC \u067E\u0648\u0633\u062A\u0647\u200C\u0647\u0627 \u0648 \u0627\u0641\u0632\u0648\u0646\u0647\u200C\u0647\u0627<br/>
-		\u{1F7E2} \u0646\u0631\u0645\u06CC \u0648 \u0627\u0646\u0639\u0637\u0627\u0641\u200C\u067E\u0630\u06CC\u0631\u06CC \u0628\u0627\u0644\u0627: \u0637\u0631\u0627\u062D\u06CC \u0648 \u067E\u06CC\u0627\u062F\u0647\u200C\u0633\u0627\u0632\u06CC \u0633\u0627\u0645\u0627\u0646\u0647 \u0628\u0631\u067E\u0627\u06CC\u0647 \u0646\u06CC\u0627\u0632\u0647\u0627\u06CC \u06A9\u0627\u0631\u0641\u0631\u0645\u0627 \u0648 \u062A\u063A\u06CC\u06CC\u0631\u0627\u062A \u0633\u0627\u062F\u0647\u200C\u062A\u0631 \u0627\u0633\u062A.`,date:1767212400},{id:2,name:"Nulled scripts: \u0634\u0645\u0634\u06CC\u0631\u06CC \u062F\u0648 \u0644\u0628\u0647",body:`<p>\u067E\u0648\u0633\u062A\u0647\u200C\u0647\u0627\u06CC \u0622\u0645\u0627\u062F\u0647 \u06CC\u0627 \u0646\u0631\u0645\u200C\u0627\u0641\u0632\u0627\u0631\u0647\u0627\u06CC \u067E\u06CC\u0634\u200C\u0633\u0627\u062E\u062A\u0647 \u0631\u0627 \u0627\u0632 \u062F\u0648 \u0631\u0627\u0647 \u0645\u06CC\u200C\u062A\u0648\u0627\u0646 \u0628\u0647\u200C\u062F\u0633\u062A \u0622\u0648\u0631\u062F: \u06F1) \u0646\u0633\u062E\u0647 \u0627\u0635\u0644\u06CC \u06F2) \u0646\u0633\u062E\u0647 nulled. \u06AF\u0627\u0647\u06CC \u062A\u062D\u0631\u06CC\u0645\u200C\u0647\u0627 \u0646\u0645\u06CC\u200C\u06AF\u0630\u0627\u0631\u062F \u06A9\u0647 \u0628\u0647 \u0641\u0631\u0648\u0634\u0646\u062F\u0647 \u0627\u0635\u0644\u06CC \u062F\u0633\u062A\u0631\u0633\u06CC \u062F\u0627\u0634\u062A\u0647 \u0628\u0627\u0634\u06CC\u0645 \u0648 \u0628\u06CC\u0634\u200C\u062A\u0631 \u0641\u0631\u0648\u0634\u0646\u062F\u06AF\u0627\u0646 \u0641\u0631\u0639\u06CC \u0646\u0633\u062E\u0647 nulled \u0631\u0627 \u0645\u06CC\u200C\u0641\u0631\u0648\u0634\u0646\u062F.</p>
-		<p>\u062E\u0648\u0628\u06CC\u200C\u0647\u0627\u06CC \u0648 \u0628\u062F\u06CC\u200C\u0647\u0627\u06CC \u0646\u0633\u062E\u0647\u200C\u0647\u0627\u06CC nulled \u062F\u0631 \u0632\u06CC\u0631 \u0622\u0648\u0631\u062F\u0647 \u0634\u062F\u0647 \u0627\u0633\u062A:</p>
-		\u{1F7E2} \u062F\u0633\u062A\u0631\u0633\u06CC \u0631\u0627\u06CC\u06AF\u0627\u0646<br/>
-		\u{1F7E2} \u0622\u0632\u0645\u0627\u06CC\u0634 \u0646\u0631\u0645\u200C\u0627\u0641\u0632\u0627\u0631 \u067E\u06CC\u0634 \u0627\u0632 \u062E\u0631\u06CC\u062F<br/>
-		\u{1F534} \u0622\u0633\u06CC\u0628 \u0627\u0645\u0646\u06CC\u062A\u06CC: \u0627\u062D\u062A\u0645\u0627\u0644 \u0648\u062C\u0648\u062F \u0628\u062F\u0627\u0641\u0632\u0627\u0631\u060C \u0648\u06CC\u0631\u0648\u0633 \u06CC\u0627 \u062F\u0631\u0647\u0627\u06CC \u067E\u0634\u062A\u06CC \u06A9\u0647 \u062F\u0627\u062F\u0647\u200C\u0647\u0627\u06CC \u0634\u0645\u0627 \u0631\u0627 \u0628\u0647 \u062E\u0637\u0631 \u0645\u06CC\u200C\u0627\u0646\u062F\u0627\u0632\u062F.<br/>
-		\u{1F534} \u0646\u0628\u0648\u062F \u067E\u0634\u062A\u06CC\u0628\u0627\u0646\u06CC: \u0647\u06CC\u0686 \u0628\u0647\u200C\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06CC \u06CC\u0627 \u067E\u0634\u062A\u06CC\u0628\u0627\u0646\u06CC \u0641\u0646\u06CC \u0628\u0631\u0627\u06CC \u0627\u0633\u06A9\u0631\u06CC\u067E\u062A\u200C\u0647\u0627\u06CC nulled \u0648\u062C\u0648\u062F \u0646\u062F\u0627\u0631\u062F.<br/>
-		\u{1F534} \u063A\u06CC\u0631\u0627\u062E\u0644\u0627\u0642\u06CC: \u0646\u0642\u0636 \u062D\u0642\u0648\u0642 \u062A\u0648\u0633\u0639\u0647\u200C\u062F\u0647\u0646\u062F\u06AF\u0627\u0646 \u0648 \u0622\u0633\u06CC\u0628 \u0628\u0647 \u0635\u0646\u0639\u062A \u0646\u0631\u0645\u200C\u0627\u0641\u0632\u0627\u0631.`,date:1735804800},{id:3,name:"\u062F\u0631\u06AF\u0627\u0647 \u067E\u0631\u062F\u0627\u062E\u062A \u0627\u06CC\u0646\u062A\u0631\u0646\u062A\u06CC (IPG)",body:`<p>\u062F\u0631\u06AF\u0627\u0647 \u067E\u0631\u062F\u0627\u062E\u062A \u0627\u06CC\u0646\u062A\u0631\u0646\u062A\u06CC (Internet Payment Gateway) \u06CC\u0627 IPG \u0627\u0628\u0632\u0627\u0631\u06CC \u0627\u0633\u062A \u0628\u0631\u0627\u06CC \u0633\u0627\u062E\u062A\u0646 \u062A\u0631\u0627\u06A9\u0646\u0634 \u0645\u0627\u0644\u06CC \u062F\u0631 \u067E\u0627\u06CC\u06AF\u0627\u0647\u200C\u0647\u0627\u06CC \u062A\u062C\u0627\u0631\u062A \u0627\u0644\u06A9\u062A\u0631\u0648\u0646\u06CC\u06A9\u06CC \u062A\u0627 \u062C\u0627\u0628\u0647\u200C\u062C\u0627\u06CC\u06CC \u067E\u0648\u0644 \u062F\u0631 \u0634\u0628\u06A9\u0647 \u067E\u0631\u062F\u0627\u062E\u062A \u0627\u0644\u06A9\u062A\u0631\u0648\u0646\u06CC\u06A9\u06CC \u0628\u0647 \u0633\u0627\u062F\u06AF\u06CC \u0627\u0646\u062C\u0627\u0645 \u0634\u0648\u062F.</p><br/>
-		<p>\u06F2 \u06AF\u0631\u0648\u0647 \u062F\u0631\u06AF\u0627\u0647 \u067E\u0631\u062F\u0627\u062E\u062A \u062F\u0627\u0631\u06CC\u0645:</p><br/>
-		<strong>\u{1F530} \u062F\u0631\u06AF\u0627\u0647 \u067E\u0631\u062F\u0627\u062E\u062A \u0645\u0633\u062A\u0642\u06CC\u0645 \u0645\u0627\u0646\u0646\u062F <a href="https://ipgautomation.pec.ir/" target="_blank">\u067E\u0627\u0631\u0633\u06CC\u0627\u0646</a></strong><br/>
-		\u{1F534} \u0641\u0631\u0622\u06CC\u0646\u062F \u06AF\u0631\u0641\u062A\u0646 \u0632\u0645\u0627\u0646\u200C\u0628\u0631 \u0627\u0633\u062A.<br/>
-		\u{1F7E2} \u0648\u0644\u06CC \u06A9\u0627\u0631\u0645\u0632\u062F \u0646\u062F\u0627\u0631\u062F.<br/>
-		\u26A0\uFE0F \u0646\u06CC\u0627\u0632 \u0627\u0633\u062A \u0631\u0648\u06CC \u0647\u0645\u0627\u0646 \u0628\u0627\u0646\u06A9\u06CC \u06A9\u0647 \u062D\u0633\u0627\u0628 \u062A\u062C\u0627\u0631\u06CC \u0628\u0627\u0632 \u06A9\u0631\u062F\u06CC\u062F \u0628\u0627\u0634\u062F. \u0628\u0631\u0627\u06CC \u0646\u0645\u0648\u0646\u0647 \u0627\u06AF\u0631 \u0628\u0627 \u0628\u0627\u0646\u06A9 \u0645\u0644\u06CC \u062F\u0631 \u062F\u0627\u0631\u0627\u06CC\u06CC \u06A9\u062F \u06AF\u0631\u0641\u062A\u0647\u200C\u0627\u06CC\u062F \u0628\u0627\u06CC\u062F \u062F\u0631\u06AF\u0627\u0647 \u0628\u0627\u0646\u06A9 \u0645\u0644\u06CC \u0648\u0635\u0644 \u0628\u0634\u0648\u062F \u0628\u0647 \u0647\u0645\u0627\u0646 \u062D\u0633\u0627\u0628 \u062A\u062C\u0627\u0631\u06CC.<br/><br/>
-		<strong>\u{1F530} \u067E\u0631\u062F\u0627\u062E\u062A\u200C\u06CC\u0627\u0631\u0647\u0627 \u0645\u0627\u0646\u0646\u062F <a href="https://next.zarinpal.com/auth/register?ref_id=2V4uFe" target="_blank">\u0632\u0631\u06CC\u0646 \u067E\u0644</a></strong><br/>
-		\u{1F534} \u06A9\u0627\u0631\u0645\u0632\u062F \u062F\u0627\u0631\u062F.<br/>
-		\u{1F7E2} \u0648\u0644\u06CC \u062F\u0633\u062A\u0631\u0633\u200C\u067E\u0630\u06CC\u0631\u06CC \u0628\u0627\u0644\u0627\u062A\u0631\u06CC \u062F\u0627\u0631\u0646\u062F.`,date:1704441600}],ee=()=>{let[,a]=L(r=>r+1,0);return a},v=new WeakMap,h=a=>{let r=ee();return P(()=>{let o=v.get(a);return o.add(r),()=>{o.delete(r)}},[]),a},M=a=>{v.set(a,new Set)},p=a=>{for(let r of v.get(a))r()},te=class{rules={};history=[];constructor(){M(this);let a=()=>{this.history.pop(),this.history.push({path:globalThis.location.hash.slice(1)||"home",parameters:{}}),p(this)};a(),globalThis.addEventListener("hashchange",a)}get current(){return this.history.at(-1)}push(a,r={}){this.history.push({path:a,parameters:r}),p(this)}pop(){this.history.pop(),p(this)}use(){let a=h(this).current.path.split("/");e:for(let[r,o]of Object.entries(this.rules)){let i=r.split("/");if(i.length!=a.length)continue e;let m=0,c=[];for(let g of i){let n=a[m];if(g.startsWith(":"))c.push(n);else if(n!=g)continue e;m+=1}return o(...c)}}},ae=a=>new Intl.DateTimeFormat("fa-IR",{year:"numeric",month:"long",day:"numeric"}).format(new Date(a*1e3)),re=()=>t("div",{className:"space-y-8 animate-fade-in",children:[t("div",{className:"bg-gradient-to-l from-blue-600 to-indigo-700 text-white rounded-2xl p-8 text-center shadow-lg",children:[e("h1",{className:"text-3xl md:text-5xl font-bold mb-4",children:"\u0628\u0647 \u06AF\u0631\u0648\u0647 \u0631\u0647\u0627 \u062E\u0648\u0634 \u0622\u0645\u062F\u06CC\u062F"}),e("p",{className:"text-lg opacity-90 mb-8",children:"\u0627\u0631\u0627\u0626\u0647\u200C\u062F\u0647\u0646\u062F\u0647 \u0628\u0631\u062A\u0631\u06CC\u0646 \u0627\u0628\u0632\u0627\u0631\u0647\u0627\u06CC \u0646\u0631\u0645\u200C\u0627\u0641\u0632\u0627\u0631\u06CC\u060C \u0637\u0631\u0627\u062D\u06CC \u0648 \u067E\u06CC\u0627\u062F\u0647\u200C\u0633\u0627\u0632\u06CC \u0648\u0628 \u0648 \u0632\u06CC\u0631\u0633\u0627\u062E\u062A"}),t("a",{href:"#shop",className:"bg-white text-blue-700 px-6 py-3 rounded-full font-bold hover:bg-gray-100 transition shadow-md flex items-center justify-center mx-auto gap-2 w-fit",children:[e(k,{size:20}),"\u0622\u063A\u0627\u0632 \u062E\u0631\u06CC\u062F"]})]}),t("div",{className:"grid grid-cols-1 md:grid-cols-3 gap-6",children:[t("div",{className:"bg-white p-6 rounded-xl shadow-sm text-center border border-gray-100",children:[e("div",{className:"w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4",children:e(H,{size:24})}),e("h3",{className:"font-bold text-lg mb-2",children:"\u0633\u0627\u062E\u062A \u0646\u0631\u0645\u200C\u0627\u0641\u0632\u0627\u0631"}),e("p",{className:"text-gray-500 text-sm",children:"\u0637\u0631\u0627\u062D\u06CC \u0648 \u067E\u06CC\u0627\u062F\u0647\u200C\u0633\u0627\u0632\u06CC \u0631\u0627\u0647\u200C\u06A9\u0627\u0631\u0647\u0627\u06CC \u0648\u06CC\u0698\u0647 \u0628\u0631\u0627\u06CC \u06A9\u0633\u0628\u200C\u0648\u06A9\u0627\u0631 \u0634\u0645\u0627"})]}),t("div",{className:"bg-white p-6 rounded-xl shadow-sm text-center border border-gray-100",children:[e("div",{className:"w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4",children:e(W,{size:24})}),e("h3",{className:"font-bold text-lg mb-2",children:"\u0645\u06CC\u0632\u0628\u0627\u0646\u06CC \u0648\u0628"}),e("p",{className:"text-gray-500 text-sm",children:"\u0633\u0631\u0648\u0631\u0647\u0627\u06CC \u062A\u0648\u0627\u0646\u0645\u0646\u062F \u0628\u0627 \u0622\u067E\u062A\u0627\u06CC\u0645 \u0628\u0627\u0644\u0627"})]}),t("div",{className:"bg-white p-6 rounded-xl shadow-sm text-center border border-gray-100",children:[e("div",{className:"w-12 h-12 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center mx-auto mb-4",children:e(S,{size:24})}),e("h3",{className:"font-bold text-lg mb-2",children:"\u0641\u0631\u0648\u0634\u200C\u06AF\u0627\u0647 \u0622\u0646\u0644\u0627\u06CC\u0646"}),e("p",{className:"text-gray-500 text-sm",children:"\u062F\u0633\u062A\u0631\u0633\u06CC \u0622\u0633\u0627\u0646 \u0628\u0647 \u0647\u0645\u0647 \u06A9\u0627\u0644\u0627\u0647\u0627"})]})]})]}),_=()=>{let[a,r]=f("\u0647\u0645\u0647"),o=a==="\u0647\u0645\u0647"?w:w.filter(i=>i.category===a);return t("div",{className:"animate-fade-in",children:[e("div",{className:"flex overflow-x-auto gap-2 pb-4 mb-6 no-scrollbar sticky top-16 z-10 bg-[#f3f4f6] py-2",children:K.map(i=>e("button",{onClick:()=>r(i),className:`whitespace-nowrap px-4 py-2 rounded-full text-sm font-medium transition-colors ${a===i?"bg-blue-600 text-white shadow-md":"bg-white text-gray-600 hover:bg-gray-100 border border-gray-200"}`,children:i},i))}),e("div",{className:"grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6",children:o.map(i=>t("div",{className:"bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100 flex flex-col hover:shadow-md transition h-full",children:[t("div",{className:"h-48 bg-gray-200 relative shrink-0",children:[e("img",{src:i.image,alt:i.name,className:"w-full h-full object-cover"}),e("span",{className:"absolute top-2 right-2 bg-black/60 text-white text-xs px-2 py-1 rounded backdrop-blur-sm",children:i.category}),i.tiers&&e("span",{className:"absolute bottom-2 right-2 bg-blue-600/90 text-white text-xs px-2 py-1 rounded backdrop-blur-sm",children:"\u0642\u06CC\u0645\u062A \u067E\u0644\u06A9\u0627\u0646\u06CC"})]}),t("div",{className:"p-4 flex flex-col flex-grow",children:[e("h3",{className:"font-bold text-gray-800 mb-1",children:i.name}),i.note&&e("p",{className:"text-xs text-gray-500 mb-3 line-clamp-2",children:i.note}),t("div",{className:"mt-auto pt-4 border-t border-gray-50 flex items-center justify-between",children:[t("div",{className:"flex flex-col",children:[t("span",{className:"text-blue-600 font-bold",children:[i.tiers?`\u0622\u063A\u0627\u0632 \u0627\u0632 ${i.tiers[0].price.toLocaleString()}`:i.price.toLocaleString()," \u062A\u0648\u0645\u0627\u0646"]}),t("span",{className:"text-xs text-gray-400",children:["\u0647\u0631 ",i.unit||"\u0639\u062F\u062F"]})]}),e("button",{onClick:()=>d.add(i),className:"bg-blue-50 text-blue-600 p-2 rounded-lg hover:bg-blue-600 hover:text-white transition",children:e(I,{size:20})})]})]})]},i.id))})]})},ie=()=>{let[a,r]=f({firstName:"",lastName:"",phone:"",address:"",zip:"",note:""}),[o,i]=f(!1),m=g=>{g.preventDefault(),d.clear(),i(!0),window.scrollTo(0,0)},c=g=>{r({...a,[g.target.name]:g.target.value})};return h(d),o?t("div",{className:"flex flex-col items-center justify-center p-8 bg-white rounded-xl shadow text-center animate-fade-in",children:[e("div",{className:"w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-4",children:e(U,{size:40})}),e("h2",{className:"text-2xl font-bold text-gray-800 mb-2",children:"\u0633\u0641\u0627\u0631\u0634 \u0628\u0627 \u062F\u0631\u0633\u062A\u06CC \u062B\u0628\u062A \u0634\u062F"}),e("p",{className:"text-gray-600 mb-6",children:"\u06A9\u0627\u0631\u0634\u0646\u0627\u0633\u0627\u0646 \u0645\u0627 \u0628\u0647 \u0632\u0648\u062F\u06CC \u0628\u0627 \u0634\u0645\u0627 \u062A\u0645\u0627\u0633 \u062E\u0648\u0627\u0647\u0646\u062F \u06AF\u0631\u0641\u062A."}),e("a",{href:"#shop",className:"bg-blue-600 text-white px-6 py-2 rounded-lg inline-block",children:"\u0628\u0627\u0632\u06AF\u0634\u062A \u0628\u0647 \u0641\u0631\u0648\u0634\u200C\u06AF\u0627\u0647"})]}):t("div",{className:"max-w-2xl mx-auto bg-white p-6 rounded-xl shadow-sm border border-gray-100 animate-fade-in",children:[t("div",{className:"flex items-center gap-2 mb-6 border-b pb-4",children:[e("a",{href:"#shop",className:"text-gray-500 hover:text-gray-800",children:e(Q,{size:20})}),e("h2",{className:"text-xl font-bold",children:"\u062A\u0633\u0648\u06CC\u0647 \u062D\u0633\u0627\u0628 \u0648 \u067E\u0631\u062F\u0627\u062E\u062A"})]}),t("form",{onSubmit:m,className:"space-y-4",children:[t("div",{className:"grid grid-cols-1 md:grid-cols-2 gap-4",children:[t("div",{children:[e("label",{className:"block text-sm font-medium text-gray-700 mb-1",children:"\u0646\u0627\u0645"}),e("input",{required:!0,type:"text",name:"firstName",onChange:c,className:"w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"})]}),t("div",{children:[e("label",{className:"block text-sm font-medium text-gray-700 mb-1",children:"\u0646\u0627\u0645 \u062E\u0627\u0646\u0648\u0627\u062F\u06AF\u06CC"}),e("input",{required:!0,type:"text",name:"lastName",onChange:c,className:"w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"})]})]}),t("div",{className:"grid grid-cols-1 md:grid-cols-2 gap-4",children:[t("div",{children:[e("label",{className:"block text-sm font-medium text-gray-700 mb-1",children:"\u0634\u0645\u0627\u0631\u0647 \u0647\u0645\u0631\u0627\u0647"}),e("input",{required:!0,type:"tel",name:"phone",placeholder:"09xxxxxxxxx",onChange:c,className:"w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"})]}),t("div",{children:[e("label",{className:"block text-sm font-medium text-gray-700 mb-1",children:"\u06A9\u062F \u067E\u0633\u062A\u06CC"}),e("input",{required:!0,type:"text",name:"zip",onChange:c,className:"w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"})]})]}),t("div",{children:[e("label",{className:"block text-sm font-medium text-gray-700 mb-1",children:"\u0646\u0634\u0627\u0646\u06CC"}),e("textarea",{required:!0,name:"address",rows:"2",onChange:c,className:"w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"})]}),t("div",{children:[e("label",{className:"block text-sm font-medium text-gray-700 mb-1",children:"\u06CC\u0627\u062F\u062F\u0627\u0634\u062A \u0633\u0641\u0627\u0631\u0634 / \u0646\u0627\u0645 \u062F\u0627\u0645\u0646\u0647 \u0648 \u06CC\u0627\u0631\u0627\u0646\u0634\u0627\u0646\u06CC"}),e("textarea",{name:"note",rows:"2",placeholder:"\u0627\u06AF\u0631 \u06CC\u0627\u062F\u062F\u0627\u0634\u062A\u06CC \u0628\u0631\u0627\u06CC \u0645\u0627 \u062F\u0627\u0631\u06CC\u062F \u0627\u06CC\u0646\u062C\u0627 \u0628\u0646\u0648\u06CC\u0633\u06CC\u062F...",onChange:c,className:"w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"})]}),e("div",{className:"bg-gray-50 p-4 rounded-lg mt-4",children:t("div",{className:"flex justify-between font-bold text-gray-800",children:[e("span",{children:"\u0645\u0628\u0644\u063A \u0642\u0627\u0628\u0644 \u067E\u0631\u062F\u0627\u062E\u062A:"}),t("span",{children:[d.total.toLocaleString()," \u062A\u0648\u0645\u0627\u0646"]})]})}),t("button",{type:"submit",className:"w-full bg-green-600 text-white font-bold py-3 rounded-lg hover:bg-green-700 transition flex justify-center items-center gap-2",children:[e(O,{size:20}),"\u067E\u0631\u062F\u0627\u062E\u062A \u0648 \u062B\u0628\u062A \u0646\u0647\u0627\u06CC\u06CC"]})]})]})},se=()=>t("div",{className:"max-w-4xl mx-auto space-y-8 animate-fade-in",children:[e("h2",{className:"text-3xl font-bold text-gray-800 mb-6",children:"\u06AF\u0627\u0647\u200C\u0646\u0648\u0634\u062A"}),Z.map(a=>e("div",{className:"bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden",children:t("div",{className:"p-6",children:[t("div",{className:"flex items-center justify-between mb-4",children:[e("h3",{className:"text-xl font-bold text-blue-700",children:a.name}),e("span",{className:"text-sm text-gray-400 bg-gray-50 px-3 py-1 rounded-full dir-ltr",children:ae(a.date)})]}),e("div",{className:"text-gray-700 leading-relaxed text-justify blog-content",innerHTML:a.body})]})},a.id))]}),oe=()=>t("div",{className:"max-w-4xl mx-auto animate-fade-in space-y-8",children:[t("div",{className:"bg-white rounded-xl shadow-sm border border-gray-100 p-8",children:[e("h2",{className:"text-2xl font-bold text-gray-800 mb-6",children:"\u067E\u06CC\u0648\u0646\u062F\u0647\u0627\u06CC \u06A9\u0627\u0631\u0628\u0631\u062F\u06CC"}),t("div",{className:"grid grid-cols-1 md:grid-cols-2 gap-4",children:[t("a",{href:"https://flowcv.com/resume/wo3s2esi60",target:"_blank",className:"flex items-center gap-3 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition",children:[e("div",{className:"bg-purple-100 p-2 rounded-full text-purple-600",children:e(D,{size:20})}),e("span",{className:"font-medium",children:"\u06A9\u0627\u0631\u0646\u0627\u0645\u0647 \u06A9\u0627\u0631\u06CC"}),e(y,{size:16,className:"mr-auto text-gray-400"})]}),t("a",{href:"https://t.me/MahdiNezarati",target:"_blank",className:"flex items-center gap-3 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition",children:[e("div",{className:"bg-blue-100 p-2 rounded-full text-blue-600",children:e(J,{size:20})}),e("span",{className:"font-medium",children:"\u0627\u0631\u062A\u0628\u0627\u0637 \u062F\u0631 \u062A\u0644\u06AF\u0631\u0627\u0645"}),e(y,{size:16,className:"mr-auto text-gray-400"})]}),t("a",{href:"https://t.me/RahaSpot",target:"_blank",className:"flex items-center gap-3 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition",children:[e("div",{className:"bg-blue-100 p-2 rounded-full text-blue-600",children:e(T,{size:20})}),e("span",{className:"font-medium",children:"\u06A9\u0627\u0646\u0627\u0644 \u062A\u0644\u06AF\u0631\u0627\u0645 \u06AF\u0631\u0648\u0647 \u0631\u0647\u0627"}),e(y,{size:16,className:"mr-auto text-gray-400"})]}),t("a",{href:"https://tariffs.irannsr.org/index.php/component/nikdesk/?view=tarefeh&dotask=m1_form",target:"_blank",className:"flex items-center gap-3 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition",children:[e("div",{className:"bg-green-100 p-2 rounded-full text-green-600",children:e(O,{size:20})}),e("span",{className:"font-medium",children:"\u0645\u062D\u0627\u0633\u0628\u0647 \u062A\u0639\u0631\u0641\u0647 \u062E\u062F\u0645\u0627\u062A"}),e(y,{size:16,className:"mr-auto text-gray-400"})]})]})]}),t("div",{className:"bg-white rounded-xl shadow-sm border border-gray-100 p-8",children:[e("h2",{className:"text-2xl font-bold text-gray-800 mb-6",children:"\u0645\u062C\u0648\u0632\u0647\u0627 \u0648 \u0646\u0645\u0627\u062F\u0647\u0627"}),t("div",{className:"flex flex-wrap items-center justify-center gap-8",children:[e("div",{className:"bg-white border p-4 rounded-xl shadow-sm hover:shadow-md transition",children:e("a",{referrerpolicy:"origin",target:"_blank",href:"https://trustseal.enamad.ir/?id=684906&Code=pCALDCc4YXFwQQRVVOOH9BT2pnfnfFez",children:e("img",{referrerpolicy:"origin",src:"https://trustseal.enamad.ir/logo.aspx?id=684906&Code=pCALDCc4YXFwQQRVVOOH9BT2pnfnfFez",alt:"",style:{cursor:"pointer"},code:"pCALDCc4YXFwQQRVVOOH9BT2pnfnfFez"})})}),e("div",{className:"flex flex-col items-center gap-2",children:t("a",{href:"https://qr.mojavez.ir/track/I12808564",target:"_blank",className:"bg-gray-50 border border-dashed border-gray-300 p-6 rounded-xl text-center hover:bg-gray-100 transition group",children:[e(X,{size:48,className:"text-gray-400 mb-2 mx-auto group-hover:text-blue-600 transition"}),e("span",{className:"font-bold text-gray-700 block",children:"\u062F\u0631\u06AF\u0627\u0647 \u0645\u0644\u06CC \u0645\u062C\u0648\u0632\u0647\u0627"}),e("span",{className:"text-xs text-gray-500 mt-1 block",children:"\u06A9\u0644\u06CC\u06A9 \u0628\u0631\u0627\u06CC \u0627\u0633\u062A\u0639\u0644\u0627\u0645"})]})})]})]})]}),ne=({isOpen:a,onClose:r})=>(h(d),a?t("div",{className:"fixed inset-0 z-50 flex justify-end",children:[e("div",{className:"absolute inset-0 bg-black/50 backdrop-blur-sm",onClick:r}),t("div",{className:"relative bg-white w-full max-w-md h-full shadow-2xl flex flex-col animate-slide-in",children:[t("div",{className:"p-4 border-b flex items-center justify-between bg-gray-50",children:[t("h2",{className:"font-bold text-lg flex items-center gap-2",children:[e(k,{size:20}),"\u0633\u0628\u062F \u062E\u0631\u06CC\u062F",e("span",{className:"bg-blue-600 text-white text-xs px-2 py-0.5 rounded-full",children:d.count})]}),e("button",{onClick:r,className:"p-2 hover:bg-gray-200 rounded-full",children:e(q,{size:20})})]}),e("div",{className:"flex-grow overflow-y-auto p-4 space-y-4",children:d.items.length==0?t("div",{className:"text-center text-gray-500 mt-10 flex flex-col items-center",children:[e(S,{size:48,className:"mb-4 opacity-20"}),e("p",{children:"\u0633\u0628\u062F \u062E\u0631\u06CC\u062F \u0634\u0645\u0627 \u062E\u0627\u0644\u06CC \u0627\u0633\u062A"})]}):d.items.map(o=>{let i=b.find(o.product),m=b.calculateProductTotal(o.product,o.quantity),c=i.tiers&&i.tiers.length>0,n=i.price*o.quantity-m,u=c&&n>0;return t("div",{className:"flex gap-4 border-b pb-4 last:border-0",children:[e("img",{src:i.image,className:"w-16 h-16 rounded object-cover bg-gray-100"}),t("div",{className:"flex-grow",children:[e("h4",{className:"font-medium text-sm line-clamp-1",children:i.name}),t("p",{className:"text-gray-500 text-xs mb-1",children:["\u06CC\u06A9\u0627: ",i.unit||"\u0639\u062F\u062F"]}),t("div",{className:"flex flex-col",children:[t("p",{className:"text-blue-600 text-sm font-bold",children:[m.toLocaleString()," \u062A\u0648\u0645\u0627\u0646"]}),u&&t("p",{className:"text-xs text-green-600",children:["(\u0633\u0648\u062F \u0634\u0645\u0627: ",n.toLocaleString()," \u062A\u0648\u0645\u0627\u0646)"]})]}),t("div",{className:"flex items-center gap-2 mt-2",children:[e("button",{onClick:()=>b.changeQuantity(o,o.quantity+1),className:"bg-gray-100 p-1 rounded hover:bg-gray-200",children:e(I,{size:14})}),e("input",{type:"number",value:o.quantity,onChange:x=>b.changeQuantity(o,Number.parseInt(x.target.value)),className:"w-12 text-center text-sm border border-gray-300 rounded focus:outline-none focus:border-blue-500 py-0.5"}),e("button",{onClick:()=>b.changeQuantity(o,o.quantity-1),className:"bg-gray-100 p-1 rounded hover:bg-gray-200",children:e(A,{size:14})}),e("button",{onClick:()=>d.remove(i.id),className:"mr-auto text-red-500 hover:text-red-700",children:e(G,{size:16})})]})]})]},i.id)})}),d.items.length>0&&t("div",{className:"p-4 border-t bg-gray-50",children:[t("div",{className:"flex justify-between mb-4 font-bold text-lg",children:[e("span",{children:"\u062C\u0645\u0639 \u06A9\u0644:"}),t("span",{children:[d.total.toLocaleString()," \u062A\u0648\u0645\u0627\u0646"]})]}),t("a",{href:"#checkout",onClick:()=>{r()},className:"w-full bg-blue-600 text-white py-3 rounded-xl font-bold hover:bg-blue-700 transition flex justify-center gap-2 items-center text-center decoration-0",children:["\u062A\u06A9\u0645\u06CC\u0644 \u062E\u0631\u06CC\u062F",e(V,{size:20})]})]})]})]}):null),b=class{items=[];add(a){e:{for(let r of this.items)if(r.product==a.id){r.quantity+=1;break e}this.items.push({product:a.id,quantity:1})}p(this)}remove(a){this.items=this.items.filter(r=>r.product!=a),p(this)}clear(){this.items.length=0,p(this)}get total(){return this.items.reduce((a,r)=>a+b.calculateProductTotal(r.product,r.quantity),0)}get count(){return this.items.reduce((a,r)=>a+r.quantity,0)}static changeQuantity(a,r){a.quantity=r>0?r:1,p(d)}static find(a){return w.find(r=>r.id==a)}static calculateProductTotal(a,r){if(a=b.find(a),!a.tiers||a.tiers.length==0)return a.price*r;let o=r,i=0,m=0;for(let c of a.tiers){if(o<=0)break;let g=c.limit-m,n=Math.min(o,g);i+=n*c.price,o-=n,m=c.limit}return i}},d=new b;d.items=JSON.parse(localStorage.getItem("cart")??"[]");M(d);v.get(d).add(()=>localStorage.setItem("cart",JSON.stringify(d.items)));var N=new te;N.rules={home(){return t("div",{className:"space-y-8 pb-12",children:[e(re,{}),t("div",{id:"shop-container",children:[e("h2",{className:"text-2xl font-bold mt-12 mb-6",children:"\u06A9\u0627\u0644\u0627\u0647\u0627\u06CC \u0628\u0631\u06AF\u0632\u06CC\u062F\u0647"}),e(_,{})]})]})},shop(){return e(_,{})},tour(){return e("div",{className:"w-full h-full animate-fade-in",children:e("iframe",{src:"https://slides.com/mahdinezarati/introduction/fullscreen",style:{width:"100%",height:"calc(100vh - 150px)",border:"none"}})})},blog(){return e(se,{})},faq(){return e(oe,{})},contact(){return e("div",{className:"animate-fade-in max-w-4xl mx-auto bg-white rounded-xl shadow overflow-hidden",children:t("div",{className:"p-6 md:p-8 grid md:grid-cols-2 gap-8",children:[t("div",{children:[e("h2",{className:"text-2xl font-bold mb-6 text-gray-800",children:"\u062A\u0645\u0627\u0633 \u0628\u0627 \u0645\u0627"}),t("ul",{className:"space-y-6",children:[t("li",{className:"flex items-center gap-4",children:[e("div",{className:"w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600",children:e(j,{size:20})}),t("div",{children:[e("span",{className:"block text-sm text-gray-500",children:"\u0634\u0645\u0627\u0631\u0647 \u062A\u0645\u0627\u0633"}),e("a",{href:"tel:09132676876",className:"text-lg font-bold dir-ltr",style:{unicodeBidi:"plaintext"},children:"0913 267 6876"})]})]}),t("li",{className:"flex items-center gap-4",children:[e("div",{className:"w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600",children:e(Y,{size:20})}),t("div",{children:[e("span",{className:"block text-sm text-gray-500",children:"\u0622\u062F\u0631\u0633"}),e("span",{className:"font-medium",children:"\u0627\u0635\u0641\u0647\u0627\u0646\u060C \u06AF\u0631\u0648\u0647 \u0631\u0647\u0627"})]})]})]})]}),e("div",{className:"h-64 bg-gray-200 rounded-lg overflow-hidden relative",children:e("iframe",{width:"100%",height:"100%",frameBorder:"0",style:{border:0},src:`https://maps.google.com/maps?q=${32.66134551036423},${51.70443288854198}&hl=fa&z=15&output=embed`,allowFullScreen:!0})})]})})},checkout(){return e(ie,{})}};var le=()=>{let[a,r]=f(!1),[o,i]=f(!1),m=h(N).current.path,c=()=>(h(d),t("button",{onClick:()=>i(!0),className:"relative p-2 text-gray-600 hover:text-blue-600 transition bg-gray-100 rounded-full",children:[e(S,{size:20}),d.count>0&&e("span",{className:"absolute -top-1 -right-1 bg-red-500 text-white text-[10px] w-5 h-5 flex items-center justify-center rounded-full border-2 border-white",children:d.count})]})),g=()=>N.use()??"\u06AF\u0634\u062A\u0645 \u0646\u0628\u0648\u062F\u060C \u0646\u06AF\u0631\u062F \u0646\u06CC\u0633\u062A!";return t("div",{className:"min-h-screen flex flex-col",children:[t("header",{className:"sticky top-0 z-40 bg-white/95 backdrop-blur shadow-sm border-b border-gray-200",children:[t("div",{className:"container mx-auto px-4 h-16 flex items-center justify-between",children:[e("button",{onClick:()=>r(!a),className:"md:hidden p-2 text-gray-600",children:a?e(q,{size:24}):e(F,{size:24})}),t("a",{className:"font-black text-xl text-blue-700 tracking-tighter cursor-pointer flex items-center gap-2",href:"#home",children:[e("img",{src:"https://raha.group/logo.svg",style:{width:"32px"}}),"\u06AF\u0631\u0648\u0647 \u0631\u0647\u0627"]}),e("nav",{className:"hidden md:flex items-center gap-8",children:z.map(n=>e("a",{href:"#"+n.id,className:`text-sm font-medium transition-colors hover:text-blue-600 flex items-center gap-2 ${m===n.id?"text-blue-600 font-bold":"text-gray-600"}`,children:n.label},n.id))}),e(c,{})]}),a&&e("div",{className:"md:hidden bg-white border-t px-4 py-2 shadow-lg absolute w-full left-0 animate-slide-down",children:z.map(n=>{let u=n.icon;return t("a",{href:"#"+n.id,onClick:()=>r(!1),className:`w-full text-right py-3 border-b last:border-0 flex items-center gap-3 ${m===n.id?"text-blue-600":"text-gray-600"}`,children:[e(u,{size:18}),n.label]},n.id)})})]}),e("main",{className:`flex-grow container mx-auto px-4 ${m==="tour"?"py-0":"py-6"}`,children:e(g,{})}),e(ne,{isOpen:o,onClose:()=>i(!1)}),e("footer",{className:"bg-white border-t mt-auto",children:e("div",{className:"container mx-auto px-4 py-8 text-center",children:e("p",{className:"text-sm text-gray-500",children:"\u06AF\u0631\u0648\u0647 \u0631\u0647\u0627 \u0647\u0645\u0647\u200C\u06CC \u0628\u0647\u0631\u0647\u200C\u0647\u0627\u06CC \u0627\u06CC\u0646 \u0633\u0627\u0645\u0627\u0646\u0647 \u0631\u0627 \u062F\u0627\u0631\u062F."})})})]})};E(e(le,{}),document.getElementById("root"));export{te as WebRouter,M as makeSubscribableValue,p as notifySubscribableValue,ee as useForceUpdate,h as useSubscribableValue};
+import { h as B, render as E } from "./preact.js";
+import { useEffect as P, useReducer as L, useState as f } from "./hooks.js";
+import { jsx as e, jsxs as t } from "./jsx-runtime.js";
+var C = new Map(),
+	l = (a) =>
+	(
+		{
+			size: r = 24,
+			color: o = "currentColor",
+			strokeWidth: i = 2,
+			className: m = "",
+		},
+	) => {
+		let [c, g] = f(C.get(a));
+		return P(() => {
+			fetch(`./icons/${a}.svg`).then((n) => n.text()).then((n) => {
+				let x = new DOMParser().parseFromString(n, "image/svg+xml");
+				C.set(a, x.documentElement), g(x.documentElement);
+			}).catch((n) => console.error(`Failed to load icon: ${a}`, n));
+		}, [a]),
+			e("svg", {
+				xmlns: "http://www.w3.org/2000/svg",
+				width: r,
+				height: r,
+				viewBox: "0 0 24 24",
+				fill: "none",
+				stroke: o,
+				"stroke-width": i,
+				"stroke-linecap": "round",
+				"stroke-linejoin": "round",
+				class: `lucide lucide-${a} ${m}`,
+				children: Array.from(
+					c?.children ?? [],
+					(n) =>
+						B(
+							n.nodeName,
+							Object.fromEntries(
+								Object.values(n.attributes).map(
+									(u) => [u.name, u.value]
+								),
+							),
+						),
+				),
+			});
+	},
+	R = l("house"),
+	k = l("shopping-bag"),
+	T = l("presentation"),
+	j = l("phone"),
+	$ = l("circle-question-mark"),
+	D = l("book-open"),
+	F = l("menu"),
+	S = l("shopping-cart"),
+	I = l("plus"),
+	A = l("minus"),
+	G = l("trash-2"),
+	U = l("check"),
+	Q = l("arrow-right"),
+	V = l("arrow-left"),
+	O = l("credit-card"),
+	H = l("code"),
+	W = l("server"),
+	X = l("award"),
+	Y = l("map-pin"),
+	J = l("send"),
+	y = l("external-link"),
+	q = l("x"),
+	s = class {
+		static from(r, o, i, m, c) {
+			let g = `
+	<svg width="${r}" height="${o}" xmlns="http://www.w3.org/2000/svg">
+		<rect width="100%" height="100%" fill="${i}"/>
+		<text 
+			x="50%" 
+			y="50%" 
+			font-family="sans-serif" 
+			font-size="30" 
+			font-weight="bold" 
+			fill="${m}" 
+			text-anchor="middle" 
+			dy=".3em"
+		>${c}</text>
+	</svg>
+`.trim();
+			return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(g)}`;
+		}
+	},
+	z = [
+		{ id: "home", label: "خانه", icon: R },
+		{ id: "shop", label: "فروش‌گاه", icon: k },
+		{ id: "blog", label: "گاه‌نوشت", icon: D },
+		{ id: "tour", label: "رها-گردی", icon: T },
+		{ id: "faq", label: "پرسش‌گان", icon: $ },
+		{ id: "contact", label: "تماس با ما", icon: j },
+	],
+	K = [
+		"همه",
+		"ابزار",
+		"پوسته آماده",
+		"داده‌بان",
+		"نشانی اینترنتی",
+		"پشتیبانی وب‌گاه",
+		// "مدیریت شبکه‌های اجتماعی",
+		"دیگر",
+	],
+	w = [{
+		id: 101,
+		name: "ثبت دامنه .ir",
+		category: "نشانی اینترنتی",
+		price: 5e4,
+		unit: "سال",
+		image: s.from(400, 300, "#f59e0b", "white", "IR Domain"),
+	}, {
+		id: 102,
+		name: "ثبت دامنه .com",
+		category: "نشانی اینترنتی",
+		price: 15e5,
+		unit: "سال",
+		image: s.from(400, 300, "#f59e0b", "white", "COM Domain"),
+	}, 
+	{id: 210, name: 'میزبانی 1GiB', category: 'داده‌بان', price: 5e3, unit: "ماه", image: s.from(400, 300, "#10b981", "white", "1 GiB Space")},
+	{id: 211, name: 'میزبانی 5GiB', category: 'داده‌بان', price: 15e3, unit: "ماه", image: s.from(400, 300, "#10b981", "white", "5 GiB Space")},
+	{id: 212, name: 'میزبانی 10GiB', category: 'داده‌بان', price: 25e3, unit: "ماه", image: s.from(400, 300, "#10b981", "white", "10 GiB Space")},
+	/* {
+		id: 201,
+		name: "Edge Worker",
+		category: "داده‌بان",
+		price: 5e3,
+		unit: "ساعت",
+		note:
+			"بر پایه زمان اجرای Wall-clock (CPU time). محاسبه پلکانی: زیر ۲۴ ساعت نرخ پایه، تا ۷۲۰ ساعت (یک ماه) نرخ میانی، و بالاتر نرخ ارزان‌تر.",
+		tiers: [{ limit: 24, price: 5e3 }, { limit: 720, price: 4e3 }, {
+			limit: 1 / 0,
+			price: 3e3,
+		}],
+		image: s.from(400, 300, "#10b981", "white", "Edge Worker"),
+	}, {
+		id: 202,
+		name: "Data Store Bundle",
+		category: "داده‌بان",
+		price: 15e4,
+		unit: "بسته ماهانه",
+		note:
+			"هر بسته دارای ۱ GiB فضا و ۳ Replica و ۱۰ میلیون Read Unit و ۱ میلیون Write Unit است.",
+		image: s.from(400, 300, "#10b981", "white", "Data Store"),
+	}, {
+		id: 203,
+		name: "Blob Store",
+		category: "داده‌بان",
+		price: 5e4,
+		unit: "GiB ماهانه",
+		note: "میزبانی داده",
+		image: s.from(400, 300, "#10b981", "white", "Blob Store"),
+	}, {
+		id: 204,
+		name: "Data Network Traffic",
+		category: "داده‌بان",
+		price: 1e3,
+		unit: "GiB",
+		note: "ترافیک شبکه انتقال داده",
+		image: s.from(400, 300, "#10b981", "white", "Traffic"),
+	}, */ {
+		id: 301,
+		name: "پوسته شرکتی",
+		category: "پوسته آماده",
+		price: 1e7,
+		unit: "پوسته",
+		image: s.from(400, 300, "#2563eb", "white", "Corporate"),
+	}, {
+		id: 302,
+		name: "پوسته فروشگاهی",
+		category: "پوسته آماده",
+		price: 12e6,
+		unit: "پوسته",
+		image: s.from(400, 300, "#2563eb", "white", "E-Commerce"),
+	}, {
+		id: 303,
+		name: "پوسته آموزشی",
+		category: "پوسته آماده",
+		price: 8e6,
+		unit: "پوسته",
+		image: s.from(400, 300, "#2563eb", "white", "Education"),
+	}, {
+		id: 304,
+		name: "پوسته پزشکی",
+		category: "پوسته آماده",
+		price: 7e6,
+		unit: "پوسته",
+		image: s.from(400, 300, "#2563eb", "white", "Medical"),
+	}, {
+		id: 305,
+		name: "پوسته مشاوران املاک",
+		category: "پوسته آماده",
+		price: 9e6,
+		unit: "پوسته",
+		image: s.from(400, 300, "#2563eb", "white", "Real Estate"),
+	}, {
+		id: 306,
+		name: "پوسته وب‌گاه شخصی",
+		category: "پوسته آماده",
+		price: 5e6,
+		unit: "پوسته",
+		image: s.from(400, 300, "#2563eb", "white", "Personal"),
+	}, {
+		id: 401,
+		name: "پشتیبانی پایه",
+		category: "پشتیبانی وب‌گاه",
+		price: 1e6,
+		unit: "ماه",
+		image: s.from(400, 300, "#6366f1", "white", "Basic Support"),
+	}, {
+		id: 402,
+		name: "پشتیبانی پیشرفته",
+		category: "پشتیبانی وب‌گاه",
+		price: 3e6,
+		unit: "ماه",
+		image: s.from(400, 300, "#6366f1", "white", "Pro Support"),
+	}, {
+		id: 403,
+		name: "پشتیبانی ویژه",
+		category: "پشتیبانی وب‌گاه",
+		price: 8e6,
+		unit: "ماه",
+		image: s.from(400, 300, "#6366f1", "white", "VIP Support"),
+	}, {
+		id: 404,
+		name: "بارگذاری و چینش محتوا",
+		category: "پشتیبانی وب‌گاه",
+		price: 75e4,
+		unit: "برگه",
+		image: s.from(400, 300, "#9ca3af", "white", "Content"),
+	}, /* {
+		id: 501,
+		name: "مدیریت اینستاگرام",
+		category: "مدیریت شبکه‌های اجتماعی",
+		price: 4e6,
+		unit: "ماه",
+		image: s.from(400, 300, "#ec4899", "white", "Instagram"),
+	}, {
+		id: 502,
+		name: "مدیریت تلگرام",
+		category: "مدیریت شبکه‌های اجتماعی",
+		price: 3e6,
+		unit: "ماه",
+		image: s.from(400, 300, "#22d3ee", "white", "Telegram"),
+	}, {
+		id: 503,
+		name: "مدیریت لینکدین",
+		category: "مدیریت شبکه‌های اجتماعی",
+		price: 5e6,
+		unit: "ماه",
+		image: s.from(400, 300, "#0ea5e9", "white", "LinkedIn"),
+	}, {
+		id: 504,
+		name: "مدیریت توییتر (X)",
+		category: "مدیریت شبکه‌های اجتماعی",
+		price: 35e5,
+		unit: "ماه",
+		image: s.from(400, 300, "#000000", "white", "Twitter X"),
+	}, {
+		id: 505,
+		name: "مدیریت یوتیوب",
+		category: "مدیریت شبکه‌های اجتماعی",
+		price: 55e5,
+		unit: "ماه",
+		image: s.from(400, 300, "#ff0000", "white", "YouTube"),
+	}, {
+		id: 601,
+		name: "پیش‌کار DNS",
+		category: "دیگر",
+		price: 3e4,
+		unit: "ماه",
+		note: "راه‌اندازی پیش‌کار با پشتیبانی از همه Resource Record Type",
+		image: s.from(400, 300, "#9ca3af", "white", "Domain Name Service"),
+	}, {
+		id: 602,
+		name: "گواهی‌نامه TLS",
+		category: "دیگر",
+		price: 6e5,
+		unit: "سال",
+		image: s.from(400, 300, "#9ca3af", "white", "Transport Layer Security"),
+	}, {
+		id: 603,
+		name: "پیش‌کار CDN",
+		category: "دیگر",
+		price: 3e5,
+		unit: "ماه",
+		note: "با این پیش‌کار محتوا زودتر به کاربر می‌رسد و UX را بهبود می‌دهد.",
+		image: s.from(400, 300, "#9ca3af", "white", "Content Delivery Network"),
+	}, {
+		id: 604,
+		name: "پیش‌کار DDoS Protection",
+		category: "دیگر",
+		price: 2e5,
+		unit: "ماه",
+		note: "محافظت لایه ۳ و ۴ و ۷",
+		image: s.from(400, 300, "#9ca3af", "white", "DDoS Guard"),
+	}, {
+		id: 605,
+		name: "دریافت نامه الکترونیکی",
+		category: "دیگر",
+		price: 4e5,
+		unit: "رایانشانی",
+		note: "راه‌اندازی پیش‌کار",
+		image: s.from(400, 300, "#9ca3af", "white", "E-Mail Address"),
+	}, {
+		id: 606,
+		name: "فرستادن نامه الکترونیک",
+		category: "دیگر",
+		price: 50,
+		unit: "ایمیل",
+		note: "۱۰ ایمیل نخست رایگان، سپس هر ایمیل ۵۰ تومان.",
+		tiers: [{ limit: 10, price: 0 }, { limit: 1 / 0, price: 50 }],
+		image: s.from(400, 300, "#9ca3af", "white", "SMTP Emails"),
+	}, {
+		id: 607,
+		name: "دریافت اینماد",
+		category: "دیگر",
+		price: 95e4,
+		unit: "خدمت",
+		image: s.from(400, 300, "#9ca3af", "white", "Enamad"),
+	}, {
+		id: 608,
+		name: "ثبت در نقشه گوگل",
+		category: "دیگر",
+		price: 95e4,
+		unit: "مکان",
+		image: s.from(400, 300, "#9ca3af", "white", "Google Maps"),
+	}, */ {
+		id: 609,
+		name: "بهینه‌سازی وب‌گاه",
+		category: "دیگر",
+		price: 6e6,
+		unit: "پروژه",
+		image: s.from(400, 300, "#9ca3af", "white", "SEO"),
+	}, {
+		id: 610,
+		name: "راه‌اندازی GSC",
+		category: "دیگر",
+		price: 12e5,
+		unit: "خدمت",
+		image: s.from(400, 300, "#9ca3af", "white", "Google Search Console"),
+	}, /* {
+		id: 611,
+		name: "پیش‌کار پیامک (SMS)",
+		category: "دیگر",
+		price: 100,
+		unit: "پیامک",
+		note:
+			"تعرفه پلکانی: تا ۱۰۰۰ عدد ۱۰۰ تومان، تا ۵۰۰۰ عدد ۹۰ تومان، و بالاتر ۸۰ تومان.",
+		tiers: [{ limit: 1e3, price: 100 }, { limit: 5e3, price: 90 }, {
+			limit: 1 / 0,
+			price: 80,
+		}],
+		image: s.from(400, 300, "#9ca3af", "white", "SMS"),
+	}, {
+		id: 612,
+		name: "پیش‌کار حمل و نقل",
+		category: "دیگر",
+		price: 15e4,
+		unit: "سرویس",
+		note: "هزینه ثابت هر بار حمل درون شهری",
+		image: s.from(400, 300, "#9ca3af", "white", "Delivery"),
+	} , {
+		id: 613,
+		name: "مشاوره",
+		category: "دیگر",
+		price: 25e5,
+		unit: "ساعت",
+		note: "مشاوره در زمینه ساخت (طراحی و پیاده‌سازی) و راه‌اندازی نرم‌افزارها",
+		image: s.from(400, 300, "#9ca3af", "white", "Consulting"),
+	}, {
+		id: 701,
+		name: "نرم‌افزار حسابداری ابری",
+		category: "ابزار",
+		price: 5e6,
+		unit: "اشتراک سالانه",
+		image: s.from(400, 300, "#8b5cf6", "white", "Accounting"),
+	}, {
+		id: 702,
+		name: "افزونه درگاه پرداخت",
+		category: "ابزار",
+		price: 85e4,
+		unit: "افزونه",
+		image: s.from(400, 300, "#ef4444", "white", "Payment Plugin"),
+	}, */ {
+		id: 702,
+		name: "ساخت ابزار نرم‌افزاری",
+		category: "ابزار",
+		price: 145e4,
+		unit: "ساعت",
+		image: s.from(400, 300, "#2563eb", "white", "Custom Project"),
+	}],
+	Z = [{
+		id: 1,
+		name: "هزینه برنامه‌نویسی اختصاصی",
+		body:
+			`<p>برای محاسبه هزینه برنامه‌نویسی اختصاصی از <a href="https://tariffs.irannsr.org/index.php/component/nikdesk/?view=tarefeh&dotask=m1_form" target="_blank">ماشین حساب تعرفه خدمات فنی-تخصصی انفورماتیک</a> کمک بگیرید.</p><br/>
+<p>می‌توان برنامه‌نویسی اختصاصی را برپایه:</p><br/>
+<strong>🔰 هسته وردپرس انجام داد:</strong><br/>
+🔴 سرعت اجرای PHP نسبت به فناوری‌های دیگر کندتر است.<br/>
+🔴 front-end و back-end در آن یکی است و UI ویژگی تعاملی پایین‌تری دارد.<br/>
+🔴 هر چه داده‌ها بیش‌تر شود، کندی جست‌وجو بیش‌تر می‌شود.<br/>
+🔴 نرمی و انعطاف‌پذیری کم برای سامانه‌های پیچیده دارد.<br/>
+🔴 اگر کاربر بخواهد چیزی را بارگذاری کند به پرونده‌های کاربرهای دیگر دسترسی دارد و باید یک افزونه جدا نوشت.<br/>
+🔴 گاه‌شمار خورشیدی داستان دارد.<br/>
+🔴 <a href="https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=wordpress" target="_blank">آسیب‌پذیری‌ها</a><br/>
+🟢 ولی آدم‌های بیش‌تری برای توسعه دادن آن پیدا می‌شود.<br/><br/>
+<strong>🔰 با فناوری‌های دیگر:</strong><br/>
+🔴 در آغاز چند برابر زمان و هزینه می‌برد<br/>
+🟢 ولی با گذر زمان هزینه نگهداری کم‌تری دارد، مانند یخچال با مصرف انرژی A+++.<br/>
+🟢 کارایی بهتر: سرعت اجرا بهتر و بهینه بودن نرم‌افزار<br/>
+🟢 امنیت بیش‌تر: کنترل کامل بر کدها و کاهش خطرات امنیتی پوسته‌ها و افزونه‌ها<br/>
+🟢 نرمی و انعطاف‌پذیری بالا: طراحی و پیاده‌سازی سامانه برپایه نیازهای کارفرما و تغییرات ساده‌تر است.`,
+		date: 1767212400,
+	}, {
+		id: 2,
+		name: "Nulled scripts: شمشیری دو لبه",
+		body:
+			`<p>پوسته‌های آماده یا نرم‌افزارهای پیش‌ساخته را از دو راه می‌توان به‌دست آورد: ۱) نسخه اصلی ۲) نسخه nulled. گاهی تحریم‌ها نمی‌گذارد که به فروشنده اصلی دسترسی داشته باشیم و بیش‌تر فروشندگان فرعی نسخه nulled را می‌فروشند.</p>
+<p>خوبی‌های و بدی‌های نسخه‌های nulled در زیر آورده شده است:</p>
+🟢 دسترسی رایگان<br/>
+🟢 آزمایش نرم‌افزار پیش از خرید<br/>
+🔴 آسیب امنیتی: احتمال وجود بدافزار، ویروس یا درهای پشتی که داده‌های شما را به خطر می‌اندازد.<br/>
+🔴 نبود پشتیبانی: هیچ به‌روزرسانی یا پشتیبانی فنی برای اسکریپت‌های nulled وجود ندارد.<br/>
+🔴 غیراخلاقی: نقض حقوق توسعه‌دهندگان و آسیب به صنعت نرم‌افزار.`,
+		date: 1735804800,
+	}, {
+		id: 3,
+		name: "درگاه پرداخت اینترنتی (IPG)",
+		body:
+			`<p>درگاه پرداخت اینترنتی (Internet Payment Gateway) یا IPG ابزاری است برای ساختن تراکنش مالی در پایگاه‌های تجارت الکترونیکی تا جابه‌جایی پول در شبکه پرداخت الکترونیکی به سادگی انجام شود.</p><br/>
+<p>۲ گروه درگاه پرداخت داریم:</p><br/>
+<strong>🔰 درگاه پرداخت مستقیم مانند <a href="https://ipgautomation.pec.ir/" target="_blank">پارسیان</a></strong><br/>
+🔴 فرآیند گرفتن زمان‌بر است.<br/>
+🟢 ولی کارمزد ندارد.<br/>
+⚠️ نیاز است روی همان بانکی که حساب تجاری باز کردید باشد. برای نمونه اگر با بانک ملی در دارایی کد گرفته‌اید باید درگاه بانک ملی وصل بشود به همان حساب تجاری.<br/><br/>
+<strong>🔰 پرداخت‌یارها مانند <a href="https://next.zarinpal.com/auth/register?ref_id=2V4uFe" target="_blank">زرین پل</a></strong><br/>
+🔴 کارمزد دارد.<br/>
+🟢 ولی دسترس‌پذیری بالاتری دارند.`,
+		date: 1704441600,
+	}],
+	ee = () => {
+		let [, a] = L((r) => r + 1, 0);
+		return a;
+	},
+	v = new WeakMap(),
+	h = (a) => {
+		let r = ee();
+		return P(() => {
+			let o = v.get(a);
+			return o.add(r), () => {
+				o.delete(r);
+			};
+		}, []),
+			a;
+	},
+	M = (a) => {
+		v.set(a, new Set());
+	},
+	p = (a) => {
+		for (let r of v.get(a)) r();
+	},
+	te = class {
+		rules = {};
+		history = [];
+		constructor() {
+			M(this);
+			let a = () => {
+				this.history.pop(),
+					this.history.push({
+						path: globalThis.location.hash.slice(1) || "home",
+						parameters: {},
+					}),
+					p(this);
+			};
+			a(), globalThis.addEventListener("hashchange", a);
+		}
+		get current() {
+			return this.history.at(-1);
+		}
+		push(a, r = {}) {
+			this.history.push({ path: a, parameters: r }), p(this);
+		}
+		pop() {
+			this.history.pop(), p(this);
+		}
+		use() {
+			let a = h(this).current.path.split("/");
+			e: for (let [r, o] of Object.entries(this.rules)) {
+				let i = r.split("/");
+				if (i.length != a.length) continue e;
+				let m = 0, c = [];
+				for (let g of i) {
+					let n = a[m];
+					if (g.startsWith(":")) c.push(n);
+					else if (n != g) continue e;
+					m += 1;
+				}
+				return o(...c);
+			}
+		}
+	},
+	ae = (a) =>
+		new Intl.DateTimeFormat("fa-IR", {
+			year: "numeric",
+			month: "long",
+			day: "numeric",
+		}).format(new Date(a * 1e3)),
+	re = () =>
+		t("div", {
+			className: "space-y-8 animate-fade-in",
+			children: [
+				t("div", {
+					className:
+						"bg-gradient-to-l from-blue-600 to-indigo-700 text-white rounded-2xl p-8 text-center shadow-lg",
+					children: [
+						e("h1", {
+							className: "text-3xl md:text-5xl font-bold mb-4",
+							children: "به گروه رها خوش آمدید",
+						}),
+						e("p", {
+							className: "text-lg opacity-90 mb-8",
+							children:
+								"ارائه‌دهنده برترین ابزارهای نرم‌افزاری، طراحی و پیاده‌سازی وب و زیرساخت",
+						}),
+						t("a", {
+							href: "#shop",
+							className:
+								"bg-white text-blue-700 px-6 py-3 rounded-full font-bold hover:bg-gray-100 transition shadow-md flex items-center justify-center mx-auto gap-2 w-fit",
+							children: [e(k, { size: 20 }), "آغاز خرید"],
+						}),
+					],
+				}),
+				t("div", {
+					className: "grid grid-cols-1 md:grid-cols-3 gap-6",
+					children: [
+						t("div", {
+							className:
+								"bg-white p-6 rounded-xl shadow-sm text-center border border-gray-100",
+							children: [
+								e("div", {
+									className:
+										"w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4",
+									children: e(H, { size: 24 }),
+								}),
+								e("h3", {
+									className: "font-bold text-lg mb-2",
+									children: "ساخت نرم‌افزار",
+								}),
+								e("p", {
+									className: "text-gray-500 text-sm",
+									children:
+										"طراحی و پیاده‌سازی راه‌کارهای ویژه برای کسب‌وکار شما",
+								}),
+							],
+						}),
+						t("div", {
+							className:
+								"bg-white p-6 rounded-xl shadow-sm text-center border border-gray-100",
+							children: [
+								e("div", {
+									className:
+										"w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4",
+									children: e(W, { size: 24 }),
+								}),
+								e("h3", {
+									className: "font-bold text-lg mb-2",
+									children: "میزبانی وب",
+								}),
+								e("p", {
+									className: "text-gray-500 text-sm",
+									children: "سرورهای توانمند با آپتایم بالا",
+								}),
+							],
+						}),
+						t("div", {
+							className:
+								"bg-white p-6 rounded-xl shadow-sm text-center border border-gray-100",
+							children: [
+								e("div", {
+									className:
+										"w-12 h-12 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center mx-auto mb-4",
+									children: e(S, { size: 24 }),
+								}),
+								e("h3", {
+									className: "font-bold text-lg mb-2",
+									children: "فروش‌گاه آنلاین",
+								}),
+								e("p", {
+									className: "text-gray-500 text-sm",
+									children: "دسترسی آسان به همه کالاها",
+								}),
+							],
+						}),
+					],
+				}),
+			],
+		}),
+	_ = () => {
+		let [a, r] = f("همه"),
+			o = a === "همه" ? w : w.filter((i) => i.category === a);
+		return t("div", {
+			className: "animate-fade-in",
+			children: [
+				e("div", {
+					className:
+						"flex overflow-x-auto gap-2 pb-4 mb-6 no-scrollbar sticky top-16 z-10 bg-[#f3f4f6] py-2",
+					children: K.map((i) =>
+						e("button", {
+							onClick: () => r(i),
+							className:
+								`whitespace-nowrap px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+									a === i
+										? "bg-blue-600 text-white shadow-md"
+										: "bg-white text-gray-600 hover:bg-gray-100 border border-gray-200"
+								}`,
+							children: i,
+						}, i)
+					),
+				}),
+				e("div", {
+					className:
+						"grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6",
+					children: o.map((i) =>
+						t("div", {
+							className:
+								"bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100 flex flex-col hover:shadow-md transition h-full",
+							children: [
+								t("div", {
+									className:
+										"h-48 bg-gray-200 relative shrink-0",
+									children: [
+										e("img", {
+											src: i.image,
+											alt: i.name,
+											className:
+												"w-full h-full object-cover",
+										}),
+										e("span", {
+											className:
+												"absolute top-2 right-2 bg-black/60 text-white text-xs px-2 py-1 rounded backdrop-blur-sm",
+											children: i.category,
+										}),
+										i.tiers &&
+										e("span", {
+											className:
+												"absolute bottom-2 right-2 bg-blue-600/90 text-white text-xs px-2 py-1 rounded backdrop-blur-sm",
+											children: "قیمت پلکانی",
+										}),
+									],
+								}),
+								t("div", {
+									className: "p-4 flex flex-col flex-grow",
+									children: [
+										e("h3", {
+											className:
+												"font-bold text-gray-800 mb-1",
+											children: i.name,
+										}),
+										i.note &&
+										e("p", {
+											className:
+												"text-xs text-gray-500 mb-3 line-clamp-2",
+											children: i.note,
+										}),
+										t("div", {
+											className:
+												"mt-auto pt-4 border-t border-gray-50 flex items-center justify-between",
+											children: [
+												t("div", {
+													className: "flex flex-col",
+													children: [
+														t("span", {
+															className:
+																"text-blue-600 font-bold",
+															children: [
+																i.tiers
+																	? `آغاز از ${
+																		i.tiers[
+																			0
+																		].price
+																			.toLocaleString()
+																	}`
+																	: i.price
+																		.toLocaleString(),
+																" تومان",
+															],
+														}),
+														t("span", {
+															className:
+																"text-xs text-gray-400",
+															children: [
+																"هر ",
+																i.unit || "عدد",
+															],
+														}),
+													],
+												}),
+												e("button", {
+													onClick: () => d.add(i),
+													className:
+														"bg-blue-50 text-blue-600 p-2 rounded-lg hover:bg-blue-600 hover:text-white transition",
+													children: e(I, {
+														size: 20,
+													}),
+												}),
+											],
+										}),
+									],
+								}),
+							],
+						}, i.id)
+					),
+				}),
+			],
+		});
+	},
+	ie = () => {
+		let [a, r] = f({
+				firstName: "",
+				lastName: "",
+				phone: "",
+				address: "",
+				zip: "",
+				note: "",
+			}),
+			[o, i] = f(!1),
+			m = (g) => {
+				g.preventDefault(), d.clear(), i(!0), window.scrollTo(0, 0);
+			},
+			c = (g) => {
+				r({ ...a, [g.target.name]: g.target.value });
+			};
+		return h(d),
+			o
+				? t("div", {
+					className:
+						"flex flex-col items-center justify-center p-8 bg-white rounded-xl shadow text-center animate-fade-in",
+					children: [
+						e("div", {
+							className:
+								"w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-4",
+							children: e(U, { size: 40 }),
+						}),
+						e("h2", {
+							className: "text-2xl font-bold text-gray-800 mb-2",
+							children: "سفارش با درستی ثبت شد",
+						}),
+						e("p", {
+							className: "text-gray-600 mb-6",
+							children:
+								"کارشناسان ما به زودی با شما تماس خواهند گرفت.",
+						}),
+						e("a", {
+							href: "#shop",
+							className:
+								"bg-blue-600 text-white px-6 py-2 rounded-lg inline-block",
+							children: "بازگشت به فروش‌گاه",
+						}),
+					],
+				})
+				: t("div", {
+					className:
+						"max-w-2xl mx-auto bg-white p-6 rounded-xl shadow-sm border border-gray-100 animate-fade-in",
+					children: [
+						t("div", {
+							className:
+								"flex items-center gap-2 mb-6 border-b pb-4",
+							children: [
+								e("a", {
+									href: "#shop",
+									className:
+										"text-gray-500 hover:text-gray-800",
+									children: e(Q, { size: 20 }),
+								}),
+								e("h2", {
+									className: "text-xl font-bold",
+									children: "تسویه حساب و پرداخت",
+								}),
+							],
+						}),
+						t("form", {
+							onSubmit: m,
+							className: "space-y-4",
+							children: [
+								t("div", {
+									className:
+										"grid grid-cols-1 md:grid-cols-2 gap-4",
+									children: [
+										t("div", {
+											children: [
+												e("label", {
+													className:
+														"block text-sm font-medium text-gray-700 mb-1",
+													children: "نام",
+												}),
+												e("input", {
+													required: !0,
+													type: "text",
+													name: "firstName",
+													onChange: c,
+													className:
+														"w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-blue-500 focus:outline-none",
+												}),
+											],
+										}),
+										t("div", {
+											children: [
+												e("label", {
+													className:
+														"block text-sm font-medium text-gray-700 mb-1",
+													children: "نام خانوادگی",
+												}),
+												e("input", {
+													required: !0,
+													type: "text",
+													name: "lastName",
+													onChange: c,
+													className:
+														"w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-blue-500 focus:outline-none",
+												}),
+											],
+										}),
+									],
+								}),
+								t("div", {
+									className:
+										"grid grid-cols-1 md:grid-cols-2 gap-4",
+									children: [
+										t("div", {
+											children: [
+												e("label", {
+													className:
+														"block text-sm font-medium text-gray-700 mb-1",
+													children: "شماره همراه",
+												}),
+												e("input", {
+													required: !0,
+													type: "tel",
+													name: "phone",
+													placeholder: "09xxxxxxxxx",
+													onChange: c,
+													className:
+														"w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-blue-500 focus:outline-none",
+												}),
+											],
+										}),
+										t("div", {
+											children: [
+												e("label", {
+													className:
+														"block text-sm font-medium text-gray-700 mb-1",
+													children: "کد پستی",
+												}),
+												e("input", {
+													required: !0,
+													type: "text",
+													name: "zip",
+													onChange: c,
+													className:
+														"w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-blue-500 focus:outline-none",
+												}),
+											],
+										}),
+									],
+								}),
+								t("div", {
+									children: [
+										e("label", {
+											className:
+												"block text-sm font-medium text-gray-700 mb-1",
+											children: "نشانی",
+										}),
+										e("textarea", {
+											required: !0,
+											name: "address",
+											rows: "2",
+											onChange: c,
+											className:
+												"w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-blue-500 focus:outline-none",
+										}),
+									],
+								}),
+								t("div", {
+									children: [
+										e("label", {
+											className:
+												"block text-sm font-medium text-gray-700 mb-1",
+											children:
+												"یادداشت سفارش / نام دامنه و یارانشانی",
+										}),
+										e("textarea", {
+											name: "note",
+											rows: "2",
+											placeholder:
+												"اگر یادداشتی برای ما دارید اینجا بنویسید...",
+											onChange: c,
+											className:
+												"w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-blue-500 focus:outline-none",
+										}),
+									],
+								}),
+								e("div", {
+									className: "bg-gray-50 p-4 rounded-lg mt-4",
+									children: t("div", {
+										className:
+											"flex justify-between font-bold text-gray-800",
+										children: [
+											e("span", {
+												children: "مبلغ قابل پرداخت:",
+											}),
+											t("span", {
+												children: [
+													d.total.toLocaleString(),
+													" تومان",
+												],
+											}),
+										],
+									}),
+								}),
+								t("button", {
+									type: "submit",
+									className:
+										"w-full bg-green-600 text-white font-bold py-3 rounded-lg hover:bg-green-700 transition flex justify-center items-center gap-2",
+									children: [
+										e(O, { size: 20 }),
+										"پرداخت و ثبت نهایی",
+									],
+								}),
+							],
+						}),
+					],
+				});
+	},
+	se = () =>
+		t("div", {
+			className: "max-w-4xl mx-auto space-y-8 animate-fade-in",
+			children: [
+				e("h2", {
+					className: "text-3xl font-bold text-gray-800 mb-6",
+					children: "گاه‌نوشت",
+				}),
+				Z.map((a) =>
+					e("div", {
+						className:
+							"bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden",
+						children: t("div", {
+							className: "p-6",
+							children: [
+								t("div", {
+									className:
+										"flex items-center justify-between mb-4",
+									children: [
+										e("h3", {
+											className:
+												"text-xl font-bold text-blue-700",
+											children: a.name,
+										}),
+										e("span", {
+											className:
+												"text-sm text-gray-400 bg-gray-50 px-3 py-1 rounded-full dir-ltr",
+											children: ae(a.date),
+										}),
+									],
+								}),
+								e("div", {
+									className:
+										"text-gray-700 leading-relaxed text-justify blog-content",
+									innerHTML: a.body,
+								}),
+							],
+						}),
+					}, a.id)
+				),
+			],
+		}),
+	oe = () =>
+		t("div", {
+			className: "max-w-4xl mx-auto animate-fade-in space-y-8",
+			children: [
+				t("div", {
+					className:
+						"bg-white rounded-xl shadow-sm border border-gray-100 p-8",
+					children: [
+						e("h2", {
+							className: "text-2xl font-bold text-gray-800 mb-6",
+							children: "پیوندهای کاربردی",
+						}),
+						t("div", {
+							className: "grid grid-cols-1 md:grid-cols-2 gap-4",
+							children: [
+								t("a", {
+									href:
+										"https://flowcv.com/resume/wo3s2esi60",
+									target: "_blank",
+									className:
+										"flex items-center gap-3 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition",
+									children: [
+										e("div", {
+											className:
+												"bg-purple-100 p-2 rounded-full text-purple-600",
+											children: e(D, { size: 20 }),
+										}),
+										e("span", {
+											className: "font-medium",
+											children: "کارنامه کاری",
+										}),
+										e(y, {
+											size: 16,
+											className: "mr-auto text-gray-400",
+										}),
+									],
+								}),
+								t("a", {
+									href: "https://t.me/MahdiNezarati",
+									target: "_blank",
+									className:
+										"flex items-center gap-3 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition",
+									children: [
+										e("div", {
+											className:
+												"bg-blue-100 p-2 rounded-full text-blue-600",
+											children: e(J, { size: 20 }),
+										}),
+										e("span", {
+											className: "font-medium",
+											children: "ارتباط در تلگرام",
+										}),
+										e(y, {
+											size: 16,
+											className: "mr-auto text-gray-400",
+										}),
+									],
+								}),
+								t("a", {
+									href: "https://t.me/RahaSpot",
+									target: "_blank",
+									className:
+										"flex items-center gap-3 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition",
+									children: [
+										e("div", {
+											className:
+												"bg-blue-100 p-2 rounded-full text-blue-600",
+											children: e(T, { size: 20 }),
+										}),
+										e("span", {
+											className: "font-medium",
+											children: "کانال تلگرام گروه رها",
+										}),
+										e(y, {
+											size: 16,
+											className: "mr-auto text-gray-400",
+										}),
+									],
+								}),
+								t("a", {
+									href:
+										"https://tariffs.irannsr.org/index.php/component/nikdesk/?view=tarefeh&dotask=m1_form",
+									target: "_blank",
+									className:
+										"flex items-center gap-3 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition",
+									children: [
+										e("div", {
+											className:
+												"bg-green-100 p-2 rounded-full text-green-600",
+											children: e(O, { size: 20 }),
+										}),
+										e("span", {
+											className: "font-medium",
+											children: "محاسبه تعرفه خدمات",
+										}),
+										e(y, {
+											size: 16,
+											className: "mr-auto text-gray-400",
+										}),
+									],
+								}),
+							],
+						}),
+					],
+				}),
+				t("div", {
+					className:
+						"bg-white rounded-xl shadow-sm border border-gray-100 p-8",
+					children: [
+						e("h2", {
+							className: "text-2xl font-bold text-gray-800 mb-6",
+							children: "مجوزها و نمادها",
+						}),
+						t("div", {
+							className:
+								"flex flex-wrap items-center justify-center gap-8",
+							children: [
+								e("div", {
+									className:
+										"bg-white border p-4 rounded-xl shadow-sm hover:shadow-md transition",
+									children: e("a", {
+										referrerpolicy: "origin",
+										target: "_blank",
+										href:
+											"https://trustseal.enamad.ir/?id=684906&Code=pCALDCc4YXFwQQRVVOOH9BT2pnfnfFez",
+										children: e("img", {
+											referrerpolicy: "origin",
+											src: "https://trustseal.enamad.ir/logo.aspx?id=684906&Code=pCALDCc4YXFwQQRVVOOH9BT2pnfnfFez",
+											alt: "",
+											style: { cursor: "pointer" },
+											code:
+												"pCALDCc4YXFwQQRVVOOH9BT2pnfnfFez",
+										}),
+									}),
+								}),
+								e("div", {
+									className:
+										"flex flex-col items-center gap-2",
+									children: t("a", {
+										href:
+											"https://qr.mojavez.ir/track/I12808564",
+										target: "_blank",
+										className:
+											"bg-gray-50 border border-dashed border-gray-300 p-6 rounded-xl text-center hover:bg-gray-100 transition group",
+										children: [
+											e(X, {
+												size: 48,
+												className:
+													"text-gray-400 mb-2 mx-auto group-hover:text-blue-600 transition",
+											}),
+											e("span", {
+												className:
+													"font-bold text-gray-700 block",
+												children: "درگاه ملی مجوزها",
+											}),
+											e("span", {
+												className:
+													"text-xs text-gray-500 mt-1 block",
+												children: "کلیک برای استعلام",
+											}),
+										],
+									}),
+								}),
+							],
+						}),
+					],
+				}),
+			],
+		}),
+	ne = ({ isOpen: a, onClose: r }) => (h(d),
+		a
+			? t("div", {
+				className: "fixed inset-0 z-50 flex justify-end",
+				children: [
+					e("div", {
+						className:
+							"absolute inset-0 bg-black/50 backdrop-blur-sm",
+						onClick: r,
+					}),
+					t("div", {
+						className:
+							"relative bg-white w-full max-w-md h-full shadow-2xl flex flex-col animate-slide-in",
+						children: [
+							t("div", {
+								className:
+									"p-4 border-b flex items-center justify-between bg-gray-50",
+								children: [
+									t("h2", {
+										className:
+											"font-bold text-lg flex items-center gap-2",
+										children: [
+											e(k, { size: 20 }),
+											"سبد خرید",
+											e("span", {
+												className:
+													"bg-blue-600 text-white text-xs px-2 py-0.5 rounded-full",
+												children: d.count,
+											}),
+										],
+									}),
+									e("button", {
+										onClick: r,
+										className:
+											"p-2 hover:bg-gray-200 rounded-full",
+										children: e(q, { size: 20 }),
+									}),
+								],
+							}),
+							e("div", {
+								className:
+									"flex-grow overflow-y-auto p-4 space-y-4",
+								children: d.items.length == 0
+									? t("div", {
+										className:
+											"text-center text-gray-500 mt-10 flex flex-col items-center",
+										children: [
+											e(S, {
+												size: 48,
+												className: "mb-4 opacity-20",
+											}),
+											e("p", {
+												children:
+													"سبد خرید شما خالی است",
+											}),
+										],
+									})
+									: d.items.map((o) => {
+										let i = b.find(o.product),
+											m = b.calculateProductTotal(
+												o.product,
+												o.quantity,
+											),
+											c = i.tiers && i.tiers.length > 0,
+											n = i.price * o.quantity - m,
+											u = c && n > 0;
+										return t("div", {
+											className:
+												"flex gap-4 border-b pb-4 last:border-0",
+											children: [
+												e("img", {
+													src: i.image,
+													className:
+														"w-16 h-16 rounded object-cover bg-gray-100",
+												}),
+												t("div", {
+													className: "flex-grow",
+													children: [
+														e("h4", {
+															className:
+																"font-medium text-sm line-clamp-1",
+															children: i.name,
+														}),
+														t("p", {
+															className:
+																"text-gray-500 text-xs mb-1",
+															children: [
+																"یکا: ",
+																i.unit || "عدد",
+															],
+														}),
+														t("div", {
+															className:
+																"flex flex-col",
+															children: [
+																t("p", {
+																	className:
+																		"text-blue-600 text-sm font-bold",
+																	children: [
+																		m.toLocaleString(),
+																		" تومان",
+																	],
+																}),
+																u &&
+																t("p", {
+																	className:
+																		"text-xs text-green-600",
+																	children: [
+																		"(سود شما: ",
+																		n.toLocaleString(),
+																		" تومان)",
+																	],
+																}),
+															],
+														}),
+														t("div", {
+															className:
+																"flex items-center gap-2 mt-2",
+															children: [
+																e("button", {
+																	onClick:
+																		() =>
+																			b.changeQuantity(
+																				o,
+																				o.quantity +
+																					1,
+																			),
+																	className:
+																		"bg-gray-100 p-1 rounded hover:bg-gray-200",
+																	children: e(
+																		I,
+																		{
+																			size:
+																				14,
+																		},
+																	),
+																}),
+																e("input", {
+																	type:
+																		"number",
+																	value:
+																		o.quantity,
+																	onChange:
+																		(x) =>
+																			b.changeQuantity(
+																				o,
+																				Number
+																					.parseInt(
+																						x.target
+																							.value,
+																					),
+																			),
+																	className:
+																		"w-12 text-center text-sm border border-gray-300 rounded focus:outline-none focus:border-blue-500 py-0.5",
+																}),
+																e("button", {
+																	onClick:
+																		() =>
+																			b.changeQuantity(
+																				o,
+																				o.quantity -
+																					1,
+																			),
+																	className:
+																		"bg-gray-100 p-1 rounded hover:bg-gray-200",
+																	children: e(
+																		A,
+																		{
+																			size:
+																				14,
+																		},
+																	),
+																}),
+																e("button", {
+																	onClick:
+																		() =>
+																			d.remove(
+																				i.id,
+																			),
+																	className:
+																		"mr-auto text-red-500 hover:text-red-700",
+																	children: e(
+																		G,
+																		{
+																			size:
+																				16,
+																		},
+																	),
+																}),
+															],
+														}),
+													],
+												}),
+											],
+										}, i.id);
+									}),
+							}),
+							d.items.length > 0 && t("div", {
+								className: "p-4 border-t bg-gray-50",
+								children: [
+									t("div", {
+										className:
+											"flex justify-between mb-4 font-bold text-lg",
+										children: [
+											e("span", { children: "جمع کل:" }),
+											t("span", {
+												children: [
+													d.total.toLocaleString(),
+													" تومان",
+												],
+											}),
+										],
+									}),
+									t("a", {
+										href: "#checkout",
+										onClick: () => {
+											r();
+										},
+										className:
+											"w-full bg-blue-600 text-white py-3 rounded-xl font-bold hover:bg-blue-700 transition flex justify-center gap-2 items-center text-center decoration-0",
+										children: [
+											"تکمیل خرید",
+											e(V, { size: 20 }),
+										],
+									}),
+								],
+							}),
+						],
+					}),
+				],
+			})
+			: null),
+	b = class {
+		items = [];
+		add(a) {
+			e: {
+				for (let r of this.items) {
+					if (r.product == a.id) {
+						r.quantity += 1;
+						break e;
+					}
+				}
+				this.items.push({ product: a.id, quantity: 1 });
+			}
+			p(this);
+		}
+		remove(a) {
+			this.items = this.items.filter((r) => r.product != a), p(this);
+		}
+		clear() {
+			this.items.length = 0, p(this);
+		}
+		get total() {
+			return this.items.reduce(
+				(a, r) => a + b.calculateProductTotal(r.product, r.quantity),
+				0,
+			);
+		}
+		get count() {
+			return this.items.reduce((a, r) => a + r.quantity, 0);
+		}
+		static changeQuantity(a, r) {
+			a.quantity = r > 0 ? r : 1, p(d);
+		}
+		static find(a) {
+			return w.find((r) => r.id == a);
+		}
+		static calculateProductTotal(a, r) {
+			if (a = b.find(a), !a.tiers || a.tiers.length == 0) {
+				return a.price * r;
+			}
+			let o = r, i = 0, m = 0;
+			for (let c of a.tiers) {
+				if (o <= 0) break;
+				let g = c.limit - m, n = Math.min(o, g);
+				i += n * c.price, o -= n, m = c.limit;
+			}
+			return i;
+		}
+	},
+	d = new b();
+d.items = JSON.parse(localStorage.getItem("cart") ?? "[]");
+M(d);
+v.get(d).add(() => localStorage.setItem("cart", JSON.stringify(d.items)));
+var N = new te();
+N.rules = {
+	home() {
+		return t("div", {
+			className: "space-y-8 pb-12",
+			children: [
+				e(re, {}),
+				t("div", {
+					id: "shop-container",
+					children: [
+						e("h2", {
+							className: "text-2xl font-bold mt-12 mb-6",
+							children: "کالاهای برگزیده",
+						}),
+						e(_, {}),
+					],
+				}),
+			],
+		});
+	},
+	shop() {
+		return e(_, {});
+	},
+	tour() {
+		return e("div", {
+			className: "w-full h-full animate-fade-in",
+			children: e("iframe", {
+				src: "https://slides.com/mahdinezarati/introduction/fullscreen",
+				style: {
+					width: "100%",
+					height: "calc(100vh - 150px)",
+					border: "none",
+				},
+			}),
+		});
+	},
+	blog() {
+		return e(se, {});
+	},
+	faq() {
+		return e(oe, {});
+	},
+	contact() {
+		return e("div", {
+			className:
+				"animate-fade-in max-w-4xl mx-auto bg-white rounded-xl shadow overflow-hidden",
+			children: t("div", {
+				className: "p-6 md:p-8 grid md:grid-cols-2 gap-8",
+				children: [
+					t("div", {
+						children: [
+							e("h2", {
+								className:
+									"text-2xl font-bold mb-6 text-gray-800",
+								children: "تماس با ما",
+							}),
+							t("ul", {
+								className: "space-y-6",
+								children: [
+									t("li", {
+										className: "flex items-center gap-4",
+										children: [
+											e("div", {
+												className:
+													"w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600",
+												children: e(j, { size: 20 }),
+											}),
+											t("div", {
+												children: [
+													e("span", {
+														className:
+															"block text-sm text-gray-500",
+														children: "شماره تماس",
+													}),
+													e("a", {
+														href: "tel:09132676876",
+														className:
+															"text-lg font-bold dir-ltr",
+														style: {
+															unicodeBidi:
+																"plaintext",
+														},
+														children:
+															"0913 267 6876",
+													}),
+												],
+											}),
+										],
+									}),
+									t("li", {
+										className: "flex items-center gap-4",
+										children: [
+											e("div", {
+												className:
+													"w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600",
+												children: e(Y, { size: 20 }),
+											}),
+											t("div", {
+												children: [
+													e("span", {
+														className:
+															"block text-sm text-gray-500",
+														children: "آدرس",
+													}),
+													e("span", {
+														className:
+															"font-medium",
+														children:
+															"اصفهان، گروه رها",
+													}),
+												],
+											}),
+										],
+									}),
+								],
+							}),
+						],
+					}),
+					e("div", {
+						className:
+							"h-64 bg-gray-200 rounded-lg overflow-hidden relative",
+						children: e("iframe", {
+							width: "100%",
+							height: "100%",
+							frameBorder: "0",
+							style: { border: 0 },
+							src: `https://maps.google.com/maps?q=${32.66134551036423},${51.70443288854198}&hl=fa&z=15&output=embed`,
+							allowFullScreen: !0,
+						}),
+					}),
+				],
+			}),
+		});
+	},
+	checkout() {
+		return e(ie, {});
+	},
+};
+var le = () => {
+	let [a, r] = f(!1),
+		[o, i] = f(!1),
+		m = h(N).current.path,
+		c = () => (h(d),
+			t("button", {
+				onClick: () => i(!0),
+				className:
+					"relative p-2 text-gray-600 hover:text-blue-600 transition bg-gray-100 rounded-full",
+				children: [
+					e(S, { size: 20 }),
+					d.count > 0 &&
+					e("span", {
+						className:
+							"absolute -top-1 -right-1 bg-red-500 text-white text-[10px] w-5 h-5 flex items-center justify-center rounded-full border-2 border-white",
+						children: d.count,
+					}),
+				],
+			})),
+		g = () => N.use() ?? "گشتم نبود، نگرد نیست!";
+	return t("div", {
+		className: "min-h-screen flex flex-col",
+		children: [
+			t("header", {
+				className:
+					"sticky top-0 z-40 bg-white/95 backdrop-blur shadow-sm border-b border-gray-200",
+				children: [
+					t("div", {
+						className:
+							"container mx-auto px-4 h-16 flex items-center justify-between",
+						children: [
+							e("button", {
+								onClick: () => r(!a),
+								className: "md:hidden p-2 text-gray-600",
+								children: a
+									? e(q, { size: 24 })
+									: e(F, { size: 24 }),
+							}),
+							t("a", {
+								className:
+									"font-black text-xl text-blue-700 tracking-tighter cursor-pointer flex items-center gap-2",
+								href: "#home",
+								children: [
+									e("img", {
+										src: "https://raha.group/logo.svg",
+										style: { width: "32px" },
+									}),
+									"گروه رها",
+								],
+							}),
+							e("nav", {
+								className: "hidden md:flex items-center gap-8",
+								children: z.map((n) =>
+									e("a", {
+										href: "#" + n.id,
+										className:
+											`text-sm font-medium transition-colors hover:text-blue-600 flex items-center gap-2 ${
+												m === n.id
+													? "text-blue-600 font-bold"
+													: "text-gray-600"
+											}`,
+										children: n.label,
+									}, n.id)
+								),
+							}),
+							e(c, {}),
+						],
+					}),
+					a && e("div", {
+						className:
+							"md:hidden bg-white border-t px-4 py-2 shadow-lg absolute w-full left-0 animate-slide-down",
+						children: z.map((n) => {
+							let u = n.icon;
+							return t("a", {
+								href: "#" + n.id,
+								onClick: () => r(!1),
+								className:
+									`w-full text-right py-3 border-b last:border-0 flex items-center gap-3 ${
+										m === n.id
+											? "text-blue-600"
+											: "text-gray-600"
+									}`,
+								children: [e(u, { size: 18 }), n.label],
+							}, n.id);
+						}),
+					}),
+				],
+			}),
+			e("main", {
+				className: `flex-grow container mx-auto px-4 ${
+					m === "tour" ? "py-0" : "py-6"
+				}`,
+				children: e(g, {}),
+			}),
+			e(ne, { isOpen: o, onClose: () => i(!1) }),
+			e("footer", {
+				className: "bg-white border-t mt-auto",
+				children: e("div", {
+					className: "container mx-auto px-4 py-8 text-center",
+					children: e("p", {
+						className: "text-sm text-gray-500",
+						children: "گروه رها همه‌ی بهره‌های این سامانه را دارد.",
+					}),
+				}),
+			}),
+		],
+	});
+};
+E(e(le, {}), document.getElementById("root"));
 		</script>
 	</head>
 	<body>
@@ -92,3 +1724,4 @@ import{render as E,h as B}from"./preact.js";import{useState as f,useEffect as P,
 	</body>
 
 </html>
+
